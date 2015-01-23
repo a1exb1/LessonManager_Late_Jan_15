@@ -7,13 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4763F581A692D2200534B32 /* CalenderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F551A692D2200534B32 /* CalenderControl.swift */; };
+		E4763F591A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4763F561A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib */; };
+		E4763F5A1A692D2200534B32 /* CalenderMonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F571A692D2200534B32 /* CalenderMonthCollectionViewCell.swift */; };
+		E4763F5C1A692D3600534B32 /* AgendaMaster2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F5B1A692D3600534B32 /* AgendaMaster2TableViewController.swift */; };
+		E4763F601A692D8B00534B32 /* AgendaDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F5F1A692D8B00534B32 /* AgendaDetailCollectionViewController.swift */; };
+		E4763F671A692DB500534B32 /* AgendaItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F621A692DB500534B32 /* AgendaItemTableViewCell.swift */; };
+		E4763F681A692DB500534B32 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F631A692DB500534B32 /* CardTableViewCell.swift */; };
+		E4763F691A692DB500534B32 /* EditingTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F641A692DB500534B32 /* EditingTextFieldTableViewCell.swift */; };
+		E4763F6A1A692DB500534B32 /* MarginedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F651A692DB500534B32 /* MarginedTableViewCell.swift */; };
+		E4763F6B1A692DB500534B32 /* TextLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F661A692DB500534B32 /* TextLabelTableViewCell.swift */; };
+		E4763F6E1A692E5200534B32 /* AgendaLessonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F6D1A692E5200534B32 /* AgendaLessonCollectionViewCell.swift */; };
+		E4763F711A692E7600534B32 /* AgendaStudentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F6F1A692E7600534B32 /* AgendaStudentCollectionViewCell.swift */; };
+		E4763F721A692E7600534B32 /* AgendaStudentCollectionViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4763F701A692E7600534B32 /* AgendaStudentCollectionViewCellXib.xib */; };
+		E4763F741A692E8B00534B32 /* AgendaLessonCollectionViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4763F731A692E8B00534B32 /* AgendaLessonCollectionViewCellXib.xib */; };
+		E4763F761A692EBA00534B32 /* AFDateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F751A692EBA00534B32 /* AFDateExtention.swift */; };
+		E4763F781A692ED300534B32 /* AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F771A692ED300534B32 /* AutoLayoutHelper.swift */; };
+		E4763F7C1A692F0800534B32 /* ManageStudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F7A1A692F0800534B32 /* ManageStudentsTableViewController.swift */; };
+		E4763F7D1A692F0800534B32 /* SaveStudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F7B1A692F0800534B32 /* SaveStudentTableViewController.swift */; };
+		E4763FAF1A6931D800534B32 /* 728-clock-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F7F1A6931D700534B32 /* 728-clock-selected.png */; };
+		E4763FB01A6931D800534B32 /* 728-clock-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F801A6931D700534B32 /* 728-clock-selected@2x.png */; };
+		E4763FB11A6931D800534B32 /* 728-clock-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F811A6931D700534B32 /* 728-clock-selected@3x.png */; };
+		E4763FB21A6931D800534B32 /* 728-clock-toolbar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F821A6931D700534B32 /* 728-clock-toolbar-selected.png */; };
+		E4763FB31A6931D800534B32 /* 728-clock-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F831A6931D700534B32 /* 728-clock-toolbar-selected@2x.png */; };
+		E4763FB41A6931D800534B32 /* 728-clock-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F841A6931D700534B32 /* 728-clock-toolbar-selected@3x.png */; };
+		E4763FB51A6931D800534B32 /* 728-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F851A6931D700534B32 /* 728-clock.png */; };
+		E4763FB61A6931D800534B32 /* 728-clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F861A6931D700534B32 /* 728-clock@2x.png */; };
+		E4763FB71A6931D800534B32 /* 728-clock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F871A6931D700534B32 /* 728-clock@3x.png */; };
+		E4763FB81A6931D800534B32 /* 735-phone-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F881A6931D700534B32 /* 735-phone-selected.png */; };
+		E4763FB91A6931D800534B32 /* 735-phone-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F891A6931D700534B32 /* 735-phone-selected@2x.png */; };
+		E4763FBA1A6931D800534B32 /* 735-phone-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F8A1A6931D700534B32 /* 735-phone-selected@3x.png */; };
+		E4763FBB1A6931D800534B32 /* 735-phone-toolbar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F8B1A6931D700534B32 /* 735-phone-toolbar-selected.png */; };
+		E4763FBC1A6931D800534B32 /* 735-phone-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F8C1A6931D700534B32 /* 735-phone-toolbar-selected@2x.png */; };
+		E4763FBD1A6931D800534B32 /* 735-phone-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F8D1A6931D700534B32 /* 735-phone-toolbar-selected@3x.png */; };
+		E4763FBE1A6931D800534B32 /* 742-wrench-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F8E1A6931D700534B32 /* 742-wrench-selected.png */; };
+		E4763FBF1A6931D800534B32 /* 742-wrench-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F8F1A6931D700534B32 /* 742-wrench-selected@2x.png */; };
+		E4763FC01A6931D800534B32 /* 742-wrench-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F901A6931D700534B32 /* 742-wrench-selected@3x.png */; };
+		E4763FC11A6931D800534B32 /* 742-wrench-toolbar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F911A6931D700534B32 /* 742-wrench-toolbar-selected.png */; };
+		E4763FC21A6931D800534B32 /* 742-wrench-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F921A6931D700534B32 /* 742-wrench-toolbar-selected@2x.png */; };
+		E4763FC31A6931D800534B32 /* 742-wrench-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F931A6931D700534B32 /* 742-wrench-toolbar-selected@3x.png */; };
+		E4763FC41A6931D800534B32 /* 742-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F941A6931D700534B32 /* 742-wrench.png */; };
+		E4763FC51A6931D800534B32 /* 742-wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F951A6931D700534B32 /* 742-wrench@2x.png */; };
+		E4763FC61A6931D800534B32 /* 742-wrench@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F961A6931D700534B32 /* 742-wrench@3x.png */; };
+		E4763FC71A6931D800534B32 /* 763-arrow-up-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F971A6931D700534B32 /* 763-arrow-up-toolbar.png */; };
+		E4763FC81A6931D800534B32 /* 763-arrow-up-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F981A6931D700534B32 /* 763-arrow-up-toolbar@2x.png */; };
+		E4763FC91A6931D800534B32 /* 763-arrow-up-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F991A6931D700534B32 /* 763-arrow-up-toolbar@3x.png */; };
+		E4763FCA1A6931D800534B32 /* 764-arrow-down-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F9A1A6931D700534B32 /* 764-arrow-down-toolbar.png */; };
+		E4763FCB1A6931D800534B32 /* 764-arrow-down-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F9B1A6931D700534B32 /* 764-arrow-down-toolbar@2x.png */; };
+		E4763FCC1A6931D800534B32 /* 764-arrow-down-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F9C1A6931D700534B32 /* 764-arrow-down-toolbar@3x.png */; };
+		E4763FCD1A6931D800534B32 /* 765-arrow-left-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F9D1A6931D700534B32 /* 765-arrow-left-toolbar.png */; };
+		E4763FCE1A6931D800534B32 /* 765-arrow-left-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F9E1A6931D700534B32 /* 765-arrow-left-toolbar@2x.png */; };
+		E4763FCF1A6931D800534B32 /* 765-arrow-left-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763F9F1A6931D700534B32 /* 765-arrow-left-toolbar@3x.png */; };
+		E4763FD01A6931D800534B32 /* 766-arrow-right-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA01A6931D700534B32 /* 766-arrow-right-toolbar.png */; };
+		E4763FD11A6931D800534B32 /* 766-arrow-right-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA11A6931D700534B32 /* 766-arrow-right-toolbar@2x.png */; };
+		E4763FD21A6931D800534B32 /* 766-arrow-right-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA21A6931D700534B32 /* 766-arrow-right-toolbar@3x.png */; };
+		E4763FD31A6931D800534B32 /* 839-mobile-phone-toolbar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA31A6931D800534B32 /* 839-mobile-phone-toolbar-selected.png */; };
+		E4763FD41A6931D800534B32 /* 839-mobile-phone-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA41A6931D800534B32 /* 839-mobile-phone-toolbar-selected@2x.png */; };
+		E4763FD51A6931D800534B32 /* 839-mobile-phone-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA51A6931D800534B32 /* 839-mobile-phone-toolbar-selected@3x.png */; };
+		E4763FD61A6931D800534B32 /* 851-calendar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA61A6931D800534B32 /* 851-calendar-selected.png */; };
+		E4763FD71A6931D800534B32 /* 851-calendar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA71A6931D800534B32 /* 851-calendar-selected@2x.png */; };
+		E4763FD81A6931D800534B32 /* 851-calendar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA81A6931D800534B32 /* 851-calendar-selected@3x.png */; };
+		E4763FD91A6931D800534B32 /* 851-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FA91A6931D800534B32 /* 851-calendar.png */; };
+		E4763FDA1A6931D800534B32 /* 851-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FAA1A6931D800534B32 /* 851-calendar@2x.png */; };
+		E4763FDB1A6931D800534B32 /* 851-calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FAB1A6931D800534B32 /* 851-calendar@3x.png */; };
+		E4763FDC1A6931D800534B32 /* 1099-list-1-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FAC1A6931D800534B32 /* 1099-list-1-selected.png */; };
+		E4763FDD1A6931D800534B32 /* 1099-list-1-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FAD1A6931D800534B32 /* 1099-list-1-selected@2x.png */; };
+		E4763FDE1A6931D800534B32 /* 1099-list-1-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4763FAE1A6931D800534B32 /* 1099-list-1-selected@3x.png */; };
+		E4763FE01A6D396200534B32 /* ManageMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763FDF1A6D396200534B32 /* ManageMasterTableViewController.swift */; };
+		E47640131A6D553400534B32 /* ManageCoursesDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47640111A6D553400534B32 /* ManageCoursesDetailTableViewController.swift */; };
+		E47640141A6D553400534B32 /* ManageTutorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47640121A6D553400534B32 /* ManageTutorsTableViewController.swift */; };
+		E47640171A6D554D00534B32 /* SaveCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47640151A6D554D00534B32 /* SaveCourseTableViewController.swift */; };
+		E47640181A6D554D00534B32 /* SaveTutorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47640161A6D554D00534B32 /* SaveTutorTableViewController.swift */; };
+		E476401A1A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47640191A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift */; };
+		E476401C1A6D59FE00534B32 /* StudentCourseLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */; };
+		E476401E1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */; };
+		E49D02591A7073AB005305BE /* SelectCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D02581A7073AB005305BE /* SelectCourseTableViewController.swift */; };
+		E49D025B1A7161DE005305BE /* SaveLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */; };
 		E4BD0B351A692C740034A8D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B341A692C740034A8D0 /* AppDelegate.swift */; };
-		E4BD0B371A692C740034A8D0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B361A692C740034A8D0 /* MasterViewController.swift */; };
-		E4BD0B391A692C740034A8D0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B381A692C740034A8D0 /* DetailViewController.swift */; };
 		E4BD0B3C1A692C740034A8D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BD0B3A1A692C740034A8D0 /* Main.storyboard */; };
 		E4BD0B3E1A692C740034A8D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4BD0B3D1A692C740034A8D0 /* Images.xcassets */; };
 		E4BD0B411A692C740034A8D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BD0B3F1A692C740034A8D0 /* LaunchScreen.xib */; };
 		E4BD0B4D1A692C740034A8D0 /* LessonManager_Late_Jan_15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B4C1A692C740034A8D0 /* LessonManager_Late_Jan_15Tests.swift */; };
+		E4BD0B631A692CE60034A8D0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B571A692CE60034A8D0 /* Client.swift */; };
+		E4BD0B641A692CE60034A8D0 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B581A692CE60034A8D0 /* Course.swift */; };
+		E4BD0B651A692CE60034A8D0 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B591A692CE60034A8D0 /* JSONReader.swift */; };
+		E4BD0B661A692CE60034A8D0 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B5A1A692CE60034A8D0 /* Lesson.swift */; };
+		E4BD0B671A692CE60034A8D0 /* LMColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B5B1A692CE60034A8D0 /* LMColor.swift */; };
+		E4BD0B681A692CE60034A8D0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B5C1A692CE60034A8D0 /* Person.swift */; };
+		E4BD0B691A692CE60034A8D0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B5D1A692CE60034A8D0 /* Response.swift */; };
+		E4BD0B6A1A692CE60034A8D0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B5E1A692CE60034A8D0 /* Session.swift */; };
+		E4BD0B6B1A692CE60034A8D0 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B5F1A692CE60034A8D0 /* Student.swift */; };
+		E4BD0B6C1A692CE60034A8D0 /* swiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B601A692CE60034A8D0 /* swiftyJSON.swift */; };
+		E4BD0B6D1A692CE60034A8D0 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B611A692CE60034A8D0 /* Tools.swift */; };
+		E4BD0B6E1A692CE60034A8D0 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B621A692CE60034A8D0 /* Tutor.swift */; };
+		E4F7C4901A700BC600A3032B /* TimeSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F7C48F1A700BC600A3032B /* TimeSpan.swift */; };
+		E4F7C4941A7063F900A3032B /* SelectStudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F7C4931A7063F900A3032B /* SelectStudentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +115,105 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4763F551A692D2200534B32 /* CalenderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderControl.swift; sourceTree = "<group>"; };
+		E4763F561A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalenderMonthCellCollectionViewCellXib.xib; sourceTree = "<group>"; };
+		E4763F571A692D2200534B32 /* CalenderMonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderMonthCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4763F5B1A692D3600534B32 /* AgendaMaster2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaMaster2TableViewController.swift; sourceTree = "<group>"; };
+		E4763F5F1A692D8B00534B32 /* AgendaDetailCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDetailCollectionViewController.swift; sourceTree = "<group>"; };
+		E4763F621A692DB500534B32 /* AgendaItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTableViewCell.swift; sourceTree = "<group>"; };
+		E4763F631A692DB500534B32 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		E4763F641A692DB500534B32 /* EditingTextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		E4763F651A692DB500534B32 /* MarginedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarginedTableViewCell.swift; sourceTree = "<group>"; };
+		E4763F661A692DB500534B32 /* TextLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLabelTableViewCell.swift; sourceTree = "<group>"; };
+		E4763F6D1A692E5200534B32 /* AgendaLessonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaLessonCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4763F6F1A692E7600534B32 /* AgendaStudentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaStudentCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4763F701A692E7600534B32 /* AgendaStudentCollectionViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaStudentCollectionViewCellXib.xib; sourceTree = "<group>"; };
+		E4763F731A692E8B00534B32 /* AgendaLessonCollectionViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaLessonCollectionViewCellXib.xib; sourceTree = "<group>"; };
+		E4763F751A692EBA00534B32 /* AFDateExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFDateExtention.swift; sourceTree = "<group>"; };
+		E4763F771A692ED300534B32 /* AutoLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutHelper.swift; sourceTree = "<group>"; };
+		E4763F7A1A692F0800534B32 /* ManageStudentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageStudentsTableViewController.swift; sourceTree = "<group>"; };
+		E4763F7B1A692F0800534B32 /* SaveStudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveStudentTableViewController.swift; sourceTree = "<group>"; };
+		E4763F7F1A6931D700534B32 /* 728-clock-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock-selected.png"; sourceTree = "<group>"; };
+		E4763F801A6931D700534B32 /* 728-clock-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock-selected@2x.png"; sourceTree = "<group>"; };
+		E4763F811A6931D700534B32 /* 728-clock-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock-selected@3x.png"; sourceTree = "<group>"; };
+		E4763F821A6931D700534B32 /* 728-clock-toolbar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock-toolbar-selected.png"; sourceTree = "<group>"; };
+		E4763F831A6931D700534B32 /* 728-clock-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock-toolbar-selected@2x.png"; sourceTree = "<group>"; };
+		E4763F841A6931D700534B32 /* 728-clock-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock-toolbar-selected@3x.png"; sourceTree = "<group>"; };
+		E4763F851A6931D700534B32 /* 728-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock.png"; sourceTree = "<group>"; };
+		E4763F861A6931D700534B32 /* 728-clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock@2x.png"; sourceTree = "<group>"; };
+		E4763F871A6931D700534B32 /* 728-clock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "728-clock@3x.png"; sourceTree = "<group>"; };
+		E4763F881A6931D700534B32 /* 735-phone-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "735-phone-selected.png"; sourceTree = "<group>"; };
+		E4763F891A6931D700534B32 /* 735-phone-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "735-phone-selected@2x.png"; sourceTree = "<group>"; };
+		E4763F8A1A6931D700534B32 /* 735-phone-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "735-phone-selected@3x.png"; sourceTree = "<group>"; };
+		E4763F8B1A6931D700534B32 /* 735-phone-toolbar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "735-phone-toolbar-selected.png"; sourceTree = "<group>"; };
+		E4763F8C1A6931D700534B32 /* 735-phone-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "735-phone-toolbar-selected@2x.png"; sourceTree = "<group>"; };
+		E4763F8D1A6931D700534B32 /* 735-phone-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "735-phone-toolbar-selected@3x.png"; sourceTree = "<group>"; };
+		E4763F8E1A6931D700534B32 /* 742-wrench-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench-selected.png"; sourceTree = "<group>"; };
+		E4763F8F1A6931D700534B32 /* 742-wrench-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench-selected@2x.png"; sourceTree = "<group>"; };
+		E4763F901A6931D700534B32 /* 742-wrench-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench-selected@3x.png"; sourceTree = "<group>"; };
+		E4763F911A6931D700534B32 /* 742-wrench-toolbar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench-toolbar-selected.png"; sourceTree = "<group>"; };
+		E4763F921A6931D700534B32 /* 742-wrench-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench-toolbar-selected@2x.png"; sourceTree = "<group>"; };
+		E4763F931A6931D700534B32 /* 742-wrench-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench-toolbar-selected@3x.png"; sourceTree = "<group>"; };
+		E4763F941A6931D700534B32 /* 742-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench.png"; sourceTree = "<group>"; };
+		E4763F951A6931D700534B32 /* 742-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench@2x.png"; sourceTree = "<group>"; };
+		E4763F961A6931D700534B32 /* 742-wrench@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "742-wrench@3x.png"; sourceTree = "<group>"; };
+		E4763F971A6931D700534B32 /* 763-arrow-up-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "763-arrow-up-toolbar.png"; sourceTree = "<group>"; };
+		E4763F981A6931D700534B32 /* 763-arrow-up-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "763-arrow-up-toolbar@2x.png"; sourceTree = "<group>"; };
+		E4763F991A6931D700534B32 /* 763-arrow-up-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "763-arrow-up-toolbar@3x.png"; sourceTree = "<group>"; };
+		E4763F9A1A6931D700534B32 /* 764-arrow-down-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "764-arrow-down-toolbar.png"; sourceTree = "<group>"; };
+		E4763F9B1A6931D700534B32 /* 764-arrow-down-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "764-arrow-down-toolbar@2x.png"; sourceTree = "<group>"; };
+		E4763F9C1A6931D700534B32 /* 764-arrow-down-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "764-arrow-down-toolbar@3x.png"; sourceTree = "<group>"; };
+		E4763F9D1A6931D700534B32 /* 765-arrow-left-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "765-arrow-left-toolbar.png"; sourceTree = "<group>"; };
+		E4763F9E1A6931D700534B32 /* 765-arrow-left-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "765-arrow-left-toolbar@2x.png"; sourceTree = "<group>"; };
+		E4763F9F1A6931D700534B32 /* 765-arrow-left-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "765-arrow-left-toolbar@3x.png"; sourceTree = "<group>"; };
+		E4763FA01A6931D700534B32 /* 766-arrow-right-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "766-arrow-right-toolbar.png"; sourceTree = "<group>"; };
+		E4763FA11A6931D700534B32 /* 766-arrow-right-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "766-arrow-right-toolbar@2x.png"; sourceTree = "<group>"; };
+		E4763FA21A6931D700534B32 /* 766-arrow-right-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "766-arrow-right-toolbar@3x.png"; sourceTree = "<group>"; };
+		E4763FA31A6931D800534B32 /* 839-mobile-phone-toolbar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "839-mobile-phone-toolbar-selected.png"; sourceTree = "<group>"; };
+		E4763FA41A6931D800534B32 /* 839-mobile-phone-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "839-mobile-phone-toolbar-selected@2x.png"; sourceTree = "<group>"; };
+		E4763FA51A6931D800534B32 /* 839-mobile-phone-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "839-mobile-phone-toolbar-selected@3x.png"; sourceTree = "<group>"; };
+		E4763FA61A6931D800534B32 /* 851-calendar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "851-calendar-selected.png"; sourceTree = "<group>"; };
+		E4763FA71A6931D800534B32 /* 851-calendar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "851-calendar-selected@2x.png"; sourceTree = "<group>"; };
+		E4763FA81A6931D800534B32 /* 851-calendar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "851-calendar-selected@3x.png"; sourceTree = "<group>"; };
+		E4763FA91A6931D800534B32 /* 851-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "851-calendar.png"; sourceTree = "<group>"; };
+		E4763FAA1A6931D800534B32 /* 851-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "851-calendar@2x.png"; sourceTree = "<group>"; };
+		E4763FAB1A6931D800534B32 /* 851-calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "851-calendar@3x.png"; sourceTree = "<group>"; };
+		E4763FAC1A6931D800534B32 /* 1099-list-1-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1099-list-1-selected.png"; sourceTree = "<group>"; };
+		E4763FAD1A6931D800534B32 /* 1099-list-1-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1099-list-1-selected@2x.png"; sourceTree = "<group>"; };
+		E4763FAE1A6931D800534B32 /* 1099-list-1-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1099-list-1-selected@3x.png"; sourceTree = "<group>"; };
+		E4763FDF1A6D396200534B32 /* ManageMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageMasterTableViewController.swift; sourceTree = "<group>"; };
+		E47640111A6D553400534B32 /* ManageCoursesDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCoursesDetailTableViewController.swift; sourceTree = "<group>"; };
+		E47640121A6D553400534B32 /* ManageTutorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageTutorsTableViewController.swift; sourceTree = "<group>"; };
+		E47640151A6D554D00534B32 /* SaveCourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveCourseTableViewController.swift; sourceTree = "<group>"; };
+		E47640161A6D554D00534B32 /* SaveTutorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTutorTableViewController.swift; sourceTree = "<group>"; };
+		E47640191A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageStudentCourseLinksTableViewController.swift; sourceTree = "<group>"; };
+		E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCourseLink.swift; sourceTree = "<group>"; };
+		E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveStudentCourseLinkViewController.swift; sourceTree = "<group>"; };
+		E49D02581A7073AB005305BE /* SelectCourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCourseTableViewController.swift; sourceTree = "<group>"; };
+		E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveLessonViewController.swift; sourceTree = "<group>"; };
 		E4BD0B2F1A692C740034A8D0 /* LessonManager_Late_Jan_15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonManager_Late_Jan_15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BD0B331A692C740034A8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BD0B341A692C740034A8D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4BD0B361A692C740034A8D0 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		E4BD0B381A692C740034A8D0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E4BD0B3B1A692C740034A8D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4BD0B3D1A692C740034A8D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4BD0B401A692C740034A8D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E4BD0B461A692C740034A8D0 /* LessonManager_Late_Jan_15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonManager_Late_Jan_15Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BD0B4B1A692C740034A8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BD0B4C1A692C740034A8D0 /* LessonManager_Late_Jan_15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonManager_Late_Jan_15Tests.swift; sourceTree = "<group>"; };
+		E4BD0B571A692CE60034A8D0 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		E4BD0B581A692CE60034A8D0 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		E4BD0B591A692CE60034A8D0 /* JSONReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
+		E4BD0B5A1A692CE60034A8D0 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		E4BD0B5B1A692CE60034A8D0 /* LMColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMColor.swift; sourceTree = "<group>"; };
+		E4BD0B5C1A692CE60034A8D0 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		E4BD0B5D1A692CE60034A8D0 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		E4BD0B5E1A692CE60034A8D0 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E4BD0B5F1A692CE60034A8D0 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		E4BD0B601A692CE60034A8D0 /* swiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swiftyJSON.swift; sourceTree = "<group>"; };
+		E4BD0B611A692CE60034A8D0 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		E4BD0B621A692CE60034A8D0 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
+		E4F7C48F1A700BC600A3032B /* TimeSpan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSpan.swift; sourceTree = "<group>"; };
+		E4F7C4931A7063F900A3032B /* SelectStudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStudentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +234,126 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4763F541A692D1200534B32 /* CalenderControl */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F551A692D2200534B32 /* CalenderControl.swift */,
+				E4763F561A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib */,
+				E4763F571A692D2200534B32 /* CalenderMonthCollectionViewCell.swift */,
+			);
+			name = CalenderControl;
+			sourceTree = "<group>";
+		};
+		E4763F5D1A692D3A00534B32 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F791A692F0000534B32 /* Manage */,
+				E4763F5E1A692D4200534B32 /* Agenda */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E4763F5E1A692D4200534B32 /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F5B1A692D3600534B32 /* AgendaMaster2TableViewController.swift */,
+				E4763F5F1A692D8B00534B32 /* AgendaDetailCollectionViewController.swift */,
+			);
+			name = Agenda;
+			sourceTree = "<group>";
+		};
+		E4763F611A692DA400534B32 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F621A692DB500534B32 /* AgendaItemTableViewCell.swift */,
+				E4763F631A692DB500534B32 /* CardTableViewCell.swift */,
+				E4763F641A692DB500534B32 /* EditingTextFieldTableViewCell.swift */,
+				E4763F651A692DB500534B32 /* MarginedTableViewCell.swift */,
+				E4763F661A692DB500534B32 /* TextLabelTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		E4763F6C1A692E2300534B32 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F6F1A692E7600534B32 /* AgendaStudentCollectionViewCell.swift */,
+				E4763F701A692E7600534B32 /* AgendaStudentCollectionViewCellXib.xib */,
+				E4763F6D1A692E5200534B32 /* AgendaLessonCollectionViewCell.swift */,
+				E4763F731A692E8B00534B32 /* AgendaLessonCollectionViewCellXib.xib */,
+			);
+			name = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		E4763F791A692F0000534B32 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				E4763FDF1A6D396200534B32 /* ManageMasterTableViewController.swift */,
+				E47640111A6D553400534B32 /* ManageCoursesDetailTableViewController.swift */,
+				E47640121A6D553400534B32 /* ManageTutorsTableViewController.swift */,
+				E4763F7A1A692F0800534B32 /* ManageStudentsTableViewController.swift */,
+				E47640191A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift */,
+				E4F7C4921A7063D500A3032B /* Select */,
+				E4F7C4911A7063BF00A3032B /* Save */,
+			);
+			name = Manage;
+			sourceTree = "<group>";
+		};
+		E4763F7E1A6931C300534B32 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F7F1A6931D700534B32 /* 728-clock-selected.png */,
+				E4763F801A6931D700534B32 /* 728-clock-selected@2x.png */,
+				E4763F811A6931D700534B32 /* 728-clock-selected@3x.png */,
+				E4763F821A6931D700534B32 /* 728-clock-toolbar-selected.png */,
+				E4763F831A6931D700534B32 /* 728-clock-toolbar-selected@2x.png */,
+				E4763F841A6931D700534B32 /* 728-clock-toolbar-selected@3x.png */,
+				E4763F851A6931D700534B32 /* 728-clock.png */,
+				E4763F861A6931D700534B32 /* 728-clock@2x.png */,
+				E4763F871A6931D700534B32 /* 728-clock@3x.png */,
+				E4763F881A6931D700534B32 /* 735-phone-selected.png */,
+				E4763F891A6931D700534B32 /* 735-phone-selected@2x.png */,
+				E4763F8A1A6931D700534B32 /* 735-phone-selected@3x.png */,
+				E4763F8B1A6931D700534B32 /* 735-phone-toolbar-selected.png */,
+				E4763F8C1A6931D700534B32 /* 735-phone-toolbar-selected@2x.png */,
+				E4763F8D1A6931D700534B32 /* 735-phone-toolbar-selected@3x.png */,
+				E4763F8E1A6931D700534B32 /* 742-wrench-selected.png */,
+				E4763F8F1A6931D700534B32 /* 742-wrench-selected@2x.png */,
+				E4763F901A6931D700534B32 /* 742-wrench-selected@3x.png */,
+				E4763F911A6931D700534B32 /* 742-wrench-toolbar-selected.png */,
+				E4763F921A6931D700534B32 /* 742-wrench-toolbar-selected@2x.png */,
+				E4763F931A6931D700534B32 /* 742-wrench-toolbar-selected@3x.png */,
+				E4763F941A6931D700534B32 /* 742-wrench.png */,
+				E4763F951A6931D700534B32 /* 742-wrench@2x.png */,
+				E4763F961A6931D700534B32 /* 742-wrench@3x.png */,
+				E4763F971A6931D700534B32 /* 763-arrow-up-toolbar.png */,
+				E4763F981A6931D700534B32 /* 763-arrow-up-toolbar@2x.png */,
+				E4763F991A6931D700534B32 /* 763-arrow-up-toolbar@3x.png */,
+				E4763F9A1A6931D700534B32 /* 764-arrow-down-toolbar.png */,
+				E4763F9B1A6931D700534B32 /* 764-arrow-down-toolbar@2x.png */,
+				E4763F9C1A6931D700534B32 /* 764-arrow-down-toolbar@3x.png */,
+				E4763F9D1A6931D700534B32 /* 765-arrow-left-toolbar.png */,
+				E4763F9E1A6931D700534B32 /* 765-arrow-left-toolbar@2x.png */,
+				E4763F9F1A6931D700534B32 /* 765-arrow-left-toolbar@3x.png */,
+				E4763FA01A6931D700534B32 /* 766-arrow-right-toolbar.png */,
+				E4763FA11A6931D700534B32 /* 766-arrow-right-toolbar@2x.png */,
+				E4763FA21A6931D700534B32 /* 766-arrow-right-toolbar@3x.png */,
+				E4763FA31A6931D800534B32 /* 839-mobile-phone-toolbar-selected.png */,
+				E4763FA41A6931D800534B32 /* 839-mobile-phone-toolbar-selected@2x.png */,
+				E4763FA51A6931D800534B32 /* 839-mobile-phone-toolbar-selected@3x.png */,
+				E4763FA61A6931D800534B32 /* 851-calendar-selected.png */,
+				E4763FA71A6931D800534B32 /* 851-calendar-selected@2x.png */,
+				E4763FA81A6931D800534B32 /* 851-calendar-selected@3x.png */,
+				E4763FA91A6931D800534B32 /* 851-calendar.png */,
+				E4763FAA1A6931D800534B32 /* 851-calendar@2x.png */,
+				E4763FAB1A6931D800534B32 /* 851-calendar@3x.png */,
+				E4763FAC1A6931D800534B32 /* 1099-list-1-selected.png */,
+				E4763FAD1A6931D800534B32 /* 1099-list-1-selected@2x.png */,
+				E4763FAE1A6931D800534B32 /* 1099-list-1-selected@3x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E4BD0B261A692C730034A8D0 = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +375,12 @@
 		E4BD0B311A692C740034A8D0 /* LessonManager_Late_Jan_15 */ = {
 			isa = PBXGroup;
 			children = (
+				E4763F6C1A692E2300534B32 /* CollectionViewCells */,
+				E4763F611A692DA400534B32 /* TableViewCells */,
+				E4763F5D1A692D3A00534B32 /* ViewControllers */,
+				E4763F541A692D1200534B32 /* CalenderControl */,
+				E4BD0B561A692CD10034A8D0 /* Models */,
 				E4BD0B341A692C740034A8D0 /* AppDelegate.swift */,
-				E4BD0B361A692C740034A8D0 /* MasterViewController.swift */,
-				E4BD0B381A692C740034A8D0 /* DetailViewController.swift */,
 				E4BD0B3A1A692C740034A8D0 /* Main.storyboard */,
 				E4BD0B3D1A692C740034A8D0 /* Images.xcassets */,
 				E4BD0B3F1A692C740034A8D0 /* LaunchScreen.xib */,
@@ -93,6 +392,7 @@
 		E4BD0B321A692C740034A8D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E4763F7E1A6931C300534B32 /* Images */,
 				E4BD0B331A692C740034A8D0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -113,6 +413,50 @@
 				E4BD0B4B1A692C740034A8D0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4BD0B561A692CD10034A8D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F771A692ED300534B32 /* AutoLayoutHelper.swift */,
+				E4763F751A692EBA00534B32 /* AFDateExtention.swift */,
+				E4BD0B571A692CE60034A8D0 /* Client.swift */,
+				E4BD0B581A692CE60034A8D0 /* Course.swift */,
+				E4BD0B591A692CE60034A8D0 /* JSONReader.swift */,
+				E4BD0B5A1A692CE60034A8D0 /* Lesson.swift */,
+				E4BD0B5B1A692CE60034A8D0 /* LMColor.swift */,
+				E4BD0B5C1A692CE60034A8D0 /* Person.swift */,
+				E4BD0B5D1A692CE60034A8D0 /* Response.swift */,
+				E4BD0B5E1A692CE60034A8D0 /* Session.swift */,
+				E4BD0B5F1A692CE60034A8D0 /* Student.swift */,
+				E4BD0B601A692CE60034A8D0 /* swiftyJSON.swift */,
+				E4BD0B611A692CE60034A8D0 /* Tools.swift */,
+				E4BD0B621A692CE60034A8D0 /* Tutor.swift */,
+				E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */,
+				E4F7C48F1A700BC600A3032B /* TimeSpan.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E4F7C4911A7063BF00A3032B /* Save */ = {
+			isa = PBXGroup;
+			children = (
+				E4763F7B1A692F0800534B32 /* SaveStudentTableViewController.swift */,
+				E47640151A6D554D00534B32 /* SaveCourseTableViewController.swift */,
+				E47640161A6D554D00534B32 /* SaveTutorTableViewController.swift */,
+				E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */,
+				E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */,
+			);
+			name = Save;
+			sourceTree = "<group>";
+		};
+		E4F7C4921A7063D500A3032B /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				E4F7C4931A7063F900A3032B /* SelectStudentTableViewController.swift */,
+				E49D02581A7073AB005305BE /* SelectCourseTableViewController.swift */,
+			);
+			name = Select;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +539,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4763FBB1A6931D800534B32 /* 735-phone-toolbar-selected.png in Resources */,
+				E4763FC91A6931D800534B32 /* 763-arrow-up-toolbar@3x.png in Resources */,
+				E4763FD91A6931D800534B32 /* 851-calendar.png in Resources */,
+				E4763FDE1A6931D800534B32 /* 1099-list-1-selected@3x.png in Resources */,
+				E4763FBE1A6931D800534B32 /* 742-wrench-selected.png in Resources */,
+				E4763FCF1A6931D800534B32 /* 765-arrow-left-toolbar@3x.png in Resources */,
+				E4763FC81A6931D800534B32 /* 763-arrow-up-toolbar@2x.png in Resources */,
+				E4763FDD1A6931D800534B32 /* 1099-list-1-selected@2x.png in Resources */,
+				E4763FC11A6931D800534B32 /* 742-wrench-toolbar-selected.png in Resources */,
+				E4763FBD1A6931D800534B32 /* 735-phone-toolbar-selected@3x.png in Resources */,
+				E4763FCB1A6931D800534B32 /* 764-arrow-down-toolbar@2x.png in Resources */,
+				E4763F721A692E7600534B32 /* AgendaStudentCollectionViewCellXib.xib in Resources */,
+				E4763FB11A6931D800534B32 /* 728-clock-selected@3x.png in Resources */,
+				E4763FC61A6931D800534B32 /* 742-wrench@3x.png in Resources */,
 				E4BD0B3C1A692C740034A8D0 /* Main.storyboard in Resources */,
+				E4763FC71A6931D800534B32 /* 763-arrow-up-toolbar.png in Resources */,
+				E4763FB51A6931D800534B32 /* 728-clock.png in Resources */,
+				E4763FAF1A6931D800534B32 /* 728-clock-selected.png in Resources */,
+				E4763FB81A6931D800534B32 /* 735-phone-selected.png in Resources */,
+				E4763FC41A6931D800534B32 /* 742-wrench.png in Resources */,
+				E4763FC21A6931D800534B32 /* 742-wrench-toolbar-selected@2x.png in Resources */,
+				E4763F591A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib in Resources */,
+				E4763FCD1A6931D800534B32 /* 765-arrow-left-toolbar.png in Resources */,
+				E4763FC51A6931D800534B32 /* 742-wrench@2x.png in Resources */,
 				E4BD0B411A692C740034A8D0 /* LaunchScreen.xib in Resources */,
+				E4763FD51A6931D800534B32 /* 839-mobile-phone-toolbar-selected@3x.png in Resources */,
+				E4763FD71A6931D800534B32 /* 851-calendar-selected@2x.png in Resources */,
+				E4763F741A692E8B00534B32 /* AgendaLessonCollectionViewCellXib.xib in Resources */,
+				E4763FBC1A6931D800534B32 /* 735-phone-toolbar-selected@2x.png in Resources */,
+				E4763FB91A6931D800534B32 /* 735-phone-selected@2x.png in Resources */,
+				E4763FC31A6931D800534B32 /* 742-wrench-toolbar-selected@3x.png in Resources */,
+				E4763FDB1A6931D800534B32 /* 851-calendar@3x.png in Resources */,
+				E4763FB71A6931D800534B32 /* 728-clock@3x.png in Resources */,
+				E4763FCC1A6931D800534B32 /* 764-arrow-down-toolbar@3x.png in Resources */,
+				E4763FDA1A6931D800534B32 /* 851-calendar@2x.png in Resources */,
+				E4763FC01A6931D800534B32 /* 742-wrench-selected@3x.png in Resources */,
+				E4763FCA1A6931D800534B32 /* 764-arrow-down-toolbar.png in Resources */,
+				E4763FB21A6931D800534B32 /* 728-clock-toolbar-selected.png in Resources */,
+				E4763FD41A6931D800534B32 /* 839-mobile-phone-toolbar-selected@2x.png in Resources */,
+				E4763FBF1A6931D800534B32 /* 742-wrench-selected@2x.png in Resources */,
+				E4763FB31A6931D800534B32 /* 728-clock-toolbar-selected@2x.png in Resources */,
+				E4763FCE1A6931D800534B32 /* 765-arrow-left-toolbar@2x.png in Resources */,
+				E4763FD81A6931D800534B32 /* 851-calendar-selected@3x.png in Resources */,
+				E4763FB41A6931D800534B32 /* 728-clock-toolbar-selected@3x.png in Resources */,
+				E4763FD61A6931D800534B32 /* 851-calendar-selected.png in Resources */,
+				E4763FDC1A6931D800534B32 /* 1099-list-1-selected.png in Resources */,
+				E4763FB01A6931D800534B32 /* 728-clock-selected@2x.png in Resources */,
+				E4763FD01A6931D800534B32 /* 766-arrow-right-toolbar.png in Resources */,
 				E4BD0B3E1A692C740034A8D0 /* Images.xcassets in Resources */,
+				E4763FB61A6931D800534B32 /* 728-clock@2x.png in Resources */,
+				E4763FD31A6931D800534B32 /* 839-mobile-phone-toolbar-selected.png in Resources */,
+				E4763FD11A6931D800534B32 /* 766-arrow-right-toolbar@2x.png in Resources */,
+				E4763FD21A6931D800534B32 /* 766-arrow-right-toolbar@3x.png in Resources */,
+				E4763FBA1A6931D800534B32 /* 735-phone-selected@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +610,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4BD0B391A692C740034A8D0 /* DetailViewController.swift in Sources */,
-				E4BD0B371A692C740034A8D0 /* MasterViewController.swift in Sources */,
+				E476401C1A6D59FE00534B32 /* StudentCourseLink.swift in Sources */,
+				E47640141A6D553400534B32 /* ManageTutorsTableViewController.swift in Sources */,
+				E4763F711A692E7600534B32 /* AgendaStudentCollectionViewCell.swift in Sources */,
+				E4BD0B671A692CE60034A8D0 /* LMColor.swift in Sources */,
+				E4763F7C1A692F0800534B32 /* ManageStudentsTableViewController.swift in Sources */,
+				E4763F6E1A692E5200534B32 /* AgendaLessonCollectionViewCell.swift in Sources */,
+				E4BD0B641A692CE60034A8D0 /* Course.swift in Sources */,
+				E4BD0B691A692CE60034A8D0 /* Response.swift in Sources */,
+				E4763FE01A6D396200534B32 /* ManageMasterTableViewController.swift in Sources */,
+				E476401A1A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift in Sources */,
+				E4BD0B631A692CE60034A8D0 /* Client.swift in Sources */,
+				E4763F761A692EBA00534B32 /* AFDateExtention.swift in Sources */,
+				E4BD0B651A692CE60034A8D0 /* JSONReader.swift in Sources */,
+				E4763F6B1A692DB500534B32 /* TextLabelTableViewCell.swift in Sources */,
+				E4BD0B6B1A692CE60034A8D0 /* Student.swift in Sources */,
+				E47640131A6D553400534B32 /* ManageCoursesDetailTableViewController.swift in Sources */,
+				E4BD0B6A1A692CE60034A8D0 /* Session.swift in Sources */,
+				E4BD0B681A692CE60034A8D0 /* Person.swift in Sources */,
+				E4BD0B6E1A692CE60034A8D0 /* Tutor.swift in Sources */,
+				E49D025B1A7161DE005305BE /* SaveLessonViewController.swift in Sources */,
+				E4BD0B6C1A692CE60034A8D0 /* swiftyJSON.swift in Sources */,
+				E4763F781A692ED300534B32 /* AutoLayoutHelper.swift in Sources */,
+				E4763F5C1A692D3600534B32 /* AgendaMaster2TableViewController.swift in Sources */,
+				E4763F6A1A692DB500534B32 /* MarginedTableViewCell.swift in Sources */,
+				E4763F681A692DB500534B32 /* CardTableViewCell.swift in Sources */,
+				E4BD0B6D1A692CE60034A8D0 /* Tools.swift in Sources */,
+				E4F7C4941A7063F900A3032B /* SelectStudentTableViewController.swift in Sources */,
+				E476401E1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift in Sources */,
+				E4763F671A692DB500534B32 /* AgendaItemTableViewCell.swift in Sources */,
+				E4BD0B661A692CE60034A8D0 /* Lesson.swift in Sources */,
 				E4BD0B351A692C740034A8D0 /* AppDelegate.swift in Sources */,
+				E4763F601A692D8B00534B32 /* AgendaDetailCollectionViewController.swift in Sources */,
+				E4763F5A1A692D2200534B32 /* CalenderMonthCollectionViewCell.swift in Sources */,
+				E4763F691A692DB500534B32 /* EditingTextFieldTableViewCell.swift in Sources */,
+				E4763F7D1A692F0800534B32 /* SaveStudentTableViewController.swift in Sources */,
+				E47640181A6D554D00534B32 /* SaveTutorTableViewController.swift in Sources */,
+				E4763F581A692D2200534B32 /* CalenderControl.swift in Sources */,
+				E4F7C4901A700BC600A3032B /* TimeSpan.swift in Sources */,
+				E47640171A6D554D00534B32 /* SaveCourseTableViewController.swift in Sources */,
+				E49D02591A7073AB005305BE /* SelectCourseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +843,7 @@
 				E4BD0B521A692C740034A8D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4BD0B531A692C740034A8D0 /* Build configuration list for PBXNativeTarget "LessonManager_Late_Jan_15Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +852,7 @@
 				E4BD0B551A692C740034A8D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
