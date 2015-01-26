@@ -31,7 +31,7 @@ class ManageMasterTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return section == 0 ? 3 : 1
+        return section == 0 ? 4 : 1
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -56,6 +56,11 @@ class ManageMasterTableViewController: UITableViewController {
                 
             case 2:
                 cell.textLabel?.text = "Students"
+                cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                break
+                
+            case 3:
+                cell.textLabel?.text = "Terms"
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 break
                 
@@ -88,6 +93,7 @@ class ManageMasterTableViewController: UITableViewController {
             case 0: v = ManageTutorsTableViewController(); break
             case 1: v = ManageCoursesDetailTableViewController(); break
             case 2: v = ManageStudentsTableViewController(); break
+            case 3: v = ManageTermsTableViewController(); break
             default: break
             }
         }

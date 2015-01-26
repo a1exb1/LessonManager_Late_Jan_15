@@ -144,7 +144,7 @@ class ManageCoursesDetailTableViewController: UITableViewController {
         if courseExistsForIndexPath(indexPath) && editingStyle == UITableViewCellEditingStyle.Delete{
             var course:Course = tutor.Courses[indexPath.row]
             course.Delete(self.view){ response in
-                println(response)
+                println("")
                 tableView.beginUpdates()
                 //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
                 tutor.Courses.removeAtIndex(indexPath.row)

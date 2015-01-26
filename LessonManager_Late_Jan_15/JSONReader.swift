@@ -75,7 +75,7 @@ class JSONReader: NSObject {
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
                 else{
-                    Tools.ShowAlertControllerOK(Tools.TopMostController().view, message: "Data download failed"){ response in }
+                    Tools.ShowAlertControllerOK("Data download failed"){ response in }
                 }
                 
             }

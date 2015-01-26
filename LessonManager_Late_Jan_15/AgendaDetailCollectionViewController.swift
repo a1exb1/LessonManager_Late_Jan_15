@@ -8,9 +8,7 @@
 
 import UIKit
 
-let reuseIdentifier = "StudentCollectionViewCell"
-
-class AgendaDetailCollectionViewController: UICollectionViewController { //, RotateDelegate {
+class AgendaDetailCollectionViewController: UICollectionViewController {
 
     var lesson:Lesson? = nil
     //var splitView:SplitView? = nil
@@ -23,12 +21,12 @@ class AgendaDetailCollectionViewController: UICollectionViewController { //, Rot
         self.collectionView?.backgroundColor = UIColor.groupTableViewBackgroundColor();
  
         collectionView!.registerNib(UINib(nibName: "AgendaStudentCollectionViewCellXib", bundle: nil), forCellWithReuseIdentifier: "StudentCollectionViewCell")
-        
         collectionView!.registerNib(UINib(nibName: "AgendaLessonCollectionViewCellXib", bundle: nil), forCellWithReuseIdentifier: "LessonCollectionViewCell")
+        collectionView!.registerNib(UINib(nibName: "AgendaAttendenceCollectionViewCellXib", bundle: nil), forCellWithReuseIdentifier: "AttendenceCollectionViewCell")
 
-        self.navigationItem.rightBarButtonItems =
-        [UIBarButtonItem(image: UIImage(named: "766-arrow-right-toolbar"), style: UIBarButtonItemStyle.Bordered, target: self, action: ""),
-        UIBarButtonItem(image: UIImage(named: "765-arrow-left-toolbar"), style: UIBarButtonItemStyle.Bordered, target: self, action: "")]
+        //self.navigationItem.rightBarButtonItems =
+//        [UIBarButtonItem(image: UIImage(named: "766-arrow-right-toolbar"), style: UIBarButtonItemStyle.Bordered, target: self, action: ""),
+//        UIBarButtonItem(image: UIImage(named: "765-arrow-left-toolbar"), style: UIBarButtonItemStyle.Bordered, target: self, action: "")]
         
         self.navigationController?.navigationBar.translucent = false
     }
@@ -37,12 +35,14 @@ class AgendaDetailCollectionViewController: UICollectionViewController { //, Rot
     override func viewDidAppear(animated: Bool) {
         //splitView?.addDetailMenuButtonToNavigationBar(self.navigationItem, button: UIBarButtonItem(title: "Agenda", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil))
         
-        lesson?.student.ReloadData(){ response in
-            println("") // line needed???!!!??
+        lesson?.Load(){ response in
+            println("")
             self.collectionView?.reloadData()
+            if Tools.Device() == .Pad{
+                session.agendaMasterDelegate?.masterNeedsUpdate()
+            }
         }
     }
-
     
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -58,7 +58,7 @@ class AgendaDetailCollectionViewController: UICollectionViewController { //, Rot
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        return lesson == nil ? 0 : 2
+        return lesson == nil ? 0 : 3
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -66,6 +66,14 @@ class AgendaDetailCollectionViewController: UICollectionViewController { //, Rot
         var cell:UICollectionViewCell = UICollectionViewCell()
         
         switch indexPath.row{
+        case 0:
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("StudentCollectionViewCell", forIndexPath: indexPath) as AgendaStudentCollectionViewCell
+            
+            //Tools.AddShadowToView(cell.viewForBaselineLayout()!)
+            cell.backgroundColor = UIColor.whiteColor()
+            (cell as AgendaStudentCollectionViewCell).setup(lesson!.student)
+            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.navyColor(), height:2)
+            break
         case 1:
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("LessonCollectionViewCell", forIndexPath: indexPath) as AgendaLessonCollectionViewCell
             cell.backgroundColor = UIColor.whiteColor()
@@ -73,13 +81,15 @@ class AgendaDetailCollectionViewController: UICollectionViewController { //, Rot
             Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.maroonColor(), height:2)
             break
             
-        default:
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("StudentCollectionViewCell", forIndexPath: indexPath) as AgendaStudentCollectionViewCell
-            
-            //Tools.AddShadowToView(cell.viewForBaselineLayout()!)
+        case 2:
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("AttendenceCollectionViewCell", forIndexPath: indexPath) as UICollectionViewCell
             cell.backgroundColor = UIColor.whiteColor()
-            (cell as AgendaStudentCollectionViewCell).setup(lesson!.student)
-            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.navyColor(), height:2)
+            (cell as AgendaAttendenceCollectionViewCell).setup(lesson!)
+            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.greenColor(), height:2)
+            break
+            
+        default:
+            
             
             break
         }
@@ -91,22 +101,22 @@ class AgendaDetailCollectionViewController: UICollectionViewController { //, Rot
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        return CGSize(width: 220, height: 160)
-//        if (self.view.bounds.width < 500){
-//            return CGSize(width: self.view.bounds.width - 30, height: 200)
-//        }
-//        else{
-//            var boundsWidth:CGFloat = self.view.bounds.width
-//            var width:CGFloat = 300
-//            
-//            if boundsWidth < 700{
-//                width = (boundsWidth / 2) - 20;
-//            }
-//            else{
-//                width = (boundsWidth / 3) - 20;
-//            }
-//            return CGSize(width: width, height: 200)
-//        }
+        //return CGSize(width: 220, height: 160)
+        if (self.view.bounds.width < 500){
+            return CGSize(width: self.view.bounds.width - 30, height: 200)
+        }
+        else{
+            var boundsWidth:CGFloat = self.view.bounds.width
+            var width:CGFloat = 300
+            
+            if boundsWidth < 700{
+                width = (boundsWidth / 2) - 20;
+            }
+            else{
+                width = (boundsWidth / 3) - 20;
+            }
+            return CGSize(width: width, height: 200)
+        }
         
     }
     

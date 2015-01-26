@@ -41,7 +41,7 @@ class Course: NSObject {
     }
     
     func Delete(view:UIView, completionHandler:(response: Int) -> ()){
-        Tools.ShowAlertController(view, message: "Are you sure you want to delete course: " + Name + "?"){ response in
+        Tools.ShowAlertController("Are you sure you want to delete course: " + Name + "?"){ response in
             if response == 1{
                 var urlString = Tools.WebApiURL(self.webApiControllerName) + "/" + String(self.CourseID)
                 JSONReader.JsonAsyncRequest(urlString, data: nil, httpMethod: .DELETE){ json in

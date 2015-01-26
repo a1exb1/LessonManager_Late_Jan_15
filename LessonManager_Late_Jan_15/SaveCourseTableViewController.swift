@@ -152,7 +152,7 @@ class SaveCourseTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 && indexPath.row == 0{
             course.Delete(self.view){ response in
-                println(response)
+                println("")
                 self.navigationController?.popViewControllerAnimated(true)
             }
         }

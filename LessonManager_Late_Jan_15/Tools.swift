@@ -47,8 +47,8 @@ enum DateComparison{
 
 enum LMDateFormat: String{
     case Date = "dd/MM/yyyy"
-    case DateTime = "dd/MM/yyyy hh:mm"
-    case DateTimeWithSeconds = "dd/MM/yyyy hh:mm:ss"
+    case DateTime = "dd/MM/yyyy HH:mm"
+    case DateTimeWithSeconds = "dd/MM/yyyy HH:mm:ss"
     case ISO8601 = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
 }
 
@@ -148,6 +148,11 @@ class Tools: NSObject {
         var d:NSDate = dateFormatter.dateFromString(s)!
         return d.dateByAddingTimeInterval(NSTimeInterval(-secondsFromGMT()))!
     }
+    
+//    class func StringISO8601FromDate(var date:NSDate) -> String{
+//        //var d = date.dateByAddingTimeInterval(NSTimeInterval(-secondsFromGMT()))!
+//        return NSDate.ISOStringFromDate(date)
+//    }
     
     class func StringFromDate(date:NSDate, format:String?) -> String{
         var f = format != nil ? format : "dd/MM/yyyy HH:mm:ss"
@@ -372,7 +377,7 @@ class Tools: NSObject {
         return Domain() + "/webapi/" + controller + "/" + action + "/"
     }
     
-    class func ShowAlertControllerOK(view:UIView, message:String, completionHandler:(response: Int) -> ()){
+    class func ShowAlertControllerOK(message:String, completionHandler:(response: Int) -> ()){
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
@@ -384,7 +389,7 @@ class Tools: NSObject {
         Tools.TopMostController().presentViewController(alertController, animated: true){}
     }
     
-    class func ShowAlertController(view:UIView, message:String, completionHandler:(response: Int) -> ()){
+    class func ShowAlertController(message:String, completionHandler:(response: Int) -> ()){
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
@@ -416,6 +421,10 @@ class Tools: NSObject {
     }
     
     class func secondsFromGMT() -> Int { return NSTimeZone.localTimeZone().secondsFromGMT }
+    
+    class func Device() -> UIUserInterfaceIdiom{
+        return UIDevice.currentDevice().userInterfaceIdiom
+    }
 }
 
 class TextFieldViewWithTextField{

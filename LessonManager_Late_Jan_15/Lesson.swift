@@ -49,7 +49,7 @@ class Lesson: NSObject {
         c.setProperties(json["Course"])
         self.course = c
         
-        self.Date = Tools.DateFromISO8601String(json["LessonDateTime"].stringValue + "+00:00")
+        self.Date = NSDate.dateFromISOString(json["LessonDateTime"].stringValue) // Tools.DateFromISO8601String(json["LessonDateTime"].stringValue + "+00:00") //
         self.EndDate = self.Date.dateByAddingMinutes(Duration)
     }
     
@@ -71,26 +71,24 @@ class Lesson: NSObject {
             "Duration": Duration,
             "CourseID": course.CourseID,
             "StudentID": student.PersonID,
-            "LessonDateTime":  Tools.StringFromDate(Date, format: "yyyy-MM-dd") + "T" + Tools.StringFromDate(Date, format: "hh:mm") + ":00" //"2015-01-07T12:15:00"
+            "LessonDateTime": NSDate.ISOStringFromDate(Date) // Tools.StringISO8601FromDate(Date) //"2015-01-07T12:15:00"
         ]
-        println(data)
         var method:HttpMethod = LessonID > 0 ? .PUT : .POST
         if isValid(){
             JSONReader.JsonAsyncRequest(urlString, data: data, httpMethod: method){ json in
-                println(json)
                 var response = Response(json: json["Response"])
                 if response.Status == 0{
-                    Tools.ShowAlertControllerOK(Tools.TopMostController().view, message: response.Message){ r in }
+                    Tools.ShowAlertControllerOK(response.Message){ r in }
                 }
                 else{
-                    //self.setProperties(json["Lesson"])
+                    self.setProperties(json)
                 }
                 
                 completionHandler(response: response.Status)
             }
         }
         else{
-            Tools.ShowAlertControllerOK(Tools.TopMostController().view, message: "Details not valid!"){ response in
+            Tools.ShowAlertControllerOK("Details not valid!"){ response in
                 completionHandler(response: 0)
             }
         }
@@ -98,7 +96,7 @@ class Lesson: NSObject {
 
     
     func Delete(view:UIView, completionHandler:(response: Int) -> ()){
-        Tools.ShowAlertController(view, message: "Are you sure you want to delete " + student.Name + "'s lesson at " + Tools.StringFromDate(self.Date, format: LMDateFormat.DateTime.rawValue) + "?"){ response in
+        Tools.ShowAlertController("Are you sure you want to delete " + student.Name + "'s lesson at " + Tools.StringFromDate(self.Date, format: LMDateFormat.DateTime.rawValue) + "?"){ response in
             if response == 1{
                 var urlString = Tools.WebMvcController("Lesson", action: "DeleteLesson")
                 var data = [
@@ -111,6 +109,18 @@ class Lesson: NSObject {
             else{
                 completionHandler(response: 0)
             }
+        }
+        
+    }
+    
+    func Load(completionHandler:(response: Int) -> ()){
+        var urlString = Tools.WebApiURL(webApiControllerName) + String(LessonID)
+        var data = [
+            "LessonID": LessonID
+        ]
+        JSONReader.JsonAsyncRequest(urlString, data: nil, httpMethod: .GET){ json in
+            self.setProperties(json)
+            completionHandler(response: 1)
         }
         
     }

@@ -75,21 +75,20 @@ class AgendaItemTableViewCell: UITableViewCell {
         //attendence
         
         var editView:UIView = UIView()
-        editView = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.width - 155, height: self.bounds.height))
+        editView = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.width - 115, height: self.bounds.height))
         attendanceControl = UISegmentedControl(frame: CGRect(x: editView.bounds.origin.x, y: editView.frame.origin.y + 5, width: editView.bounds.width - 5, height: editView.bounds.height - 10))
         attendanceControl.insertSegmentWithTitle("None", atIndex: 0, animated: false)
-        attendanceControl.insertSegmentWithTitle("Absent", atIndex: 1, animated: false)
-        attendanceControl.insertSegmentWithTitle("Present", atIndex: 2, animated: false)
+        attendanceControl.insertSegmentWithTitle("Cancelled", atIndex: 1, animated: false)
+        attendanceControl.insertSegmentWithTitle("Absent", atIndex: 2, animated: false)
+        attendanceControl.insertSegmentWithTitle("Present", atIndex: 3, animated: false)
         
-        var statusid = lesson.Status.rawValue
-        if statusid == 1{ //switch pos round
-            statusid = 2
-        }
-        else if statusid == 2{
-            statusid = 1
-        }
+//        var attr = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 10.0)!, forKey: NSFontAttributeName)
+//        attendanceControl.setTitleTextAttributes(attr, forState: .Normal)
         
-        attendanceControl.selectedSegmentIndex = statusid
+        var i = lesson.Status.rawValue
+        var order = [0, 3, 2, 1]
+        self.attendanceControl.selectedSegmentIndex = order[i]
+        
         attendanceControl.addTarget(self, action: "setAttendance:", forControlEvents: UIControlEvents.ValueChanged)
         editView.addSubview(attendanceControl)
         self.editingAccessoryView = editView
@@ -97,13 +96,8 @@ class AgendaItemTableViewCell: UITableViewCell {
     }
     
     func setAttendance(control:UISegmentedControl){
-        var statusid = control.selectedSegmentIndex
-        if statusid == 1{ //switch pos round
-            statusid = 2
-        }
-        else if statusid == 2{
-            statusid = 1
-        }
+        var order = [0, 3, 2, 1]
+        var statusid = order[control.selectedSegmentIndex]
         var status = LessonStatus(rawValue: statusid)!
         lesson.SetAttendance(status){ response in
         }

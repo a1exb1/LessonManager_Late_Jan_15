@@ -72,7 +72,7 @@ class Tutor: Person{
     }
     
     func Delete(view:UIView, completionHandler:(response: Int) -> ()){
-        Tools.ShowAlertController(view, message: "Are you sure you want to delete tutor: " + Name + "?"){ response in
+        Tools.ShowAlertController("Are you sure you want to delete tutor: " + Name + "?"){ response in
             if response == 1{
                 var urlString = Tools.WebApiURL(self.webApiControllerName) + "/" + String(self.PersonID)
                 JSONReader.JsonAsyncRequest(urlString, data: nil, httpMethod: .DELETE){ json in
@@ -98,6 +98,22 @@ class Tutor: Person{
             completionHandler(response: slots)
         }
 
+    }
+    
+    func getTerms(completionHandler:(response: Array<Term>) -> ()){
+        var urlString = Tools.WebApiURL("Terms")
+        var data:Dictionary<String, AnyObject> = [
+            "TutorID": PersonID
+        ]
+        
+        JSONReader.JsonAsyncRequest(urlString, data: data, httpMethod: .GET){ json in
+            var terms = Array<Term>()
+            for (index: String, termJSON: JSON) in json{
+                var term = Term(json: termJSON)
+                terms.append(term)
+            }
+            completionHandler(response: terms)
+        }
     }
     
     override func setProperties(json:JSON){

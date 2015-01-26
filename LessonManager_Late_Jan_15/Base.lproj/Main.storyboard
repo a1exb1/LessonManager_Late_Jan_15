@@ -119,11 +119,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ih3-lZ-g8P" secondAttribute="trailing" constant="-16" id="FbY-VF-mUw"/>
                             <constraint firstItem="ih3-lZ-g8P" firstAttribute="top" secondItem="9DC-YZ-iB3" secondAttribute="bottom" id="H2f-C8-Aa3"/>
                             <constraint firstItem="1OE-Tv-hez" firstAttribute="top" secondItem="RuE-f6-3Yb" secondAttribute="bottom" id="Pwo-LS-KX2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ih3-lZ-g8P" secondAttribute="trailing" constant="-16" id="aA5-l2-ysr"/>
                             <constraint firstItem="RuE-f6-3Yb" firstAttribute="leading" secondItem="Kee-Ba-vnG" secondAttribute="leadingMargin" constant="-16" id="gfc-lh-Usd"/>
                             <constraint firstItem="ih3-lZ-g8P" firstAttribute="leading" secondItem="Kee-Ba-vnG" secondAttribute="leadingMargin" constant="-16" id="iV3-eu-abZ"/>
                             <constraint firstItem="RuE-f6-3Yb" firstAttribute="top" secondItem="ih3-lZ-g8P" secondAttribute="bottom" id="k64-er-wMC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RuE-f6-3Yb" secondAttribute="trailing" constant="-16" id="odu-nD-m0i"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FbY-VF-mUw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="7LO-gS-bNu"/>
                     <connections>
@@ -133,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYw-lo-W3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="-46"/>
+            <point key="canvasLocation" x="68" y="-48"/>
         </scene>
         <!--Agenda Detail Collection View Controller-->
         <scene sceneID="xEB-LG-uav">
@@ -145,7 +151,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WOG-rZ-kBU">
                             <size key="itemSize" width="106" height="97"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="6"/>
                             <size key="footerReferenceSize" width="50" height="50"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>

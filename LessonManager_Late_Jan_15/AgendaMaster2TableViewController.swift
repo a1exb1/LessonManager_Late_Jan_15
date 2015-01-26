@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalenderControlDelegate {
+class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalenderControlDelegate, SessionDelegate {
 
     //var detailViewController: DetailViewController? = nil
     var calenderView:CalenderControl? = nil
@@ -26,9 +26,9 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
         super.viewDidLoad()
 
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Today", style: UIBarButtonItemStyle.Bordered, target: self, action: "goToToday")
-        self.navigationItem.leftBarButtonItems = [self.editButtonItem(),
-        UIBarButtonItem(title: "Cmode", style: UIBarButtonItemStyle.Bordered, target: self, action: "switchCalenderMode")
-        ]
+        self.navigationItem.leftBarButtonItems = [self.editButtonItem()]
+//        UIBarButtonItem(title: "Cmode", style: UIBarButtonItemStyle.Bordered, target: self, action: "switchCalenderMode")
+//        ]
         
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "766-arrow-right-toolbar"), style: UIBarButtonItemStyle.Bordered, target: self, action: "nextMonth"),
             UIBarButtonItem(image: UIImage(named: "765-arrow-left-toolbar"), style: UIBarButtonItemStyle.Bordered, target: self, action: "prevMonth")]
@@ -41,7 +41,6 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
         self.view.addSubview(tableView)
         
         self.navigationController!.tabBarItem!.selectedImage = UIImage(named: "728-clock-selected.png")
-        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = LMColor.purpleColor()
         self.navigationController?.navigationBar.translucent = false
@@ -56,6 +55,12 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
 //            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
 //        }
         
+        session.agendaMasterDelegate = self
+    }
+    
+    func masterNeedsUpdate(){
+        getData()
+        getMonthData()
     }
     
     func setToday(){
@@ -67,6 +72,7 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
         if calenderView == nil{
             calenderView = CalenderControl(origin: self.view, navigationItem:navigationItem)
             calenderView?.delegate = self
+            calenderView?.setIsMonthMode(true)
         }
         
         getMonthData()
@@ -114,7 +120,6 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     }
     
     func goToSettings(){
-        
         settingsNvc = UINavigationController()
         settingsNvc.modalPresentationStyle = UIModalPresentationStyle.FormSheet
         
@@ -145,11 +150,6 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     
     func nextMonth(){
         calenderView?.nextMonth()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func getData(){

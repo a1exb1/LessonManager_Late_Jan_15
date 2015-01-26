@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol SessionDelegate{
+    func masterNeedsUpdate()
+}
+
 class Session: NSObject {
     var tutor:Tutor = Tutor()
     var client:Client = Client()
     //var activeViewController:AnyObject? = nil
+    //var delegates:Array<SessionDelegate> = []
+    var agendaMasterDelegate:SessionDelegate? = nil
 }

@@ -124,7 +124,7 @@ class ManageStudentCourseLinksTableViewController: UITableViewController {
             var slot = slotsForDay[indexPath.row]
             
             slot.Delete(self.view){ response in
-                println(response) // this line needed ?!
+                println("") // this line needed ?!
                 //self.getData()
                 
                 self.tableView.beginUpdates()

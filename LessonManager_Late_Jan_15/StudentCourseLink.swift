@@ -44,7 +44,7 @@ class StudentCourseLink: NSObject {
             JSONReader.JsonAsyncRequest(urlString, data: data, httpMethod: method){ json in
                 var response = Response(json: json["Response"])
                 if response.Status == 0{
-                    Tools.ShowAlertControllerOK(Tools.TopMostController().view, message: response.Message){ r in }
+                    Tools.ShowAlertControllerOK(response.Message){ r in }
                 }
                 else{
                     self.setProperties(json)
@@ -54,18 +54,17 @@ class StudentCourseLink: NSObject {
             }
         }
         else{
-            Tools.ShowAlertControllerOK(Tools.TopMostController().view, message: "Details not valid!"){ response in
+            Tools.ShowAlertControllerOK("Details not valid!"){ response in
                 completionHandler(response: 0)
             }
         }
     }
     
     func Delete(view:UIView, completionHandler:(response: Int) -> ()){
-        Tools.ShowAlertController(view, message: "Are you sure you want to remove " + student.Name + " from " + course.Name + "?"){ response in
+        Tools.ShowAlertController("Are you sure you want to remove " + student.Name + " from " + course.Name + "?"){ response in
             if response == 1{
                 var urlString = Tools.WebApiURL(self.webApiControllerName) + "/" + String(self.StudentCourseLinkID)
                 JSONReader.JsonAsyncRequest(urlString, data: nil, httpMethod: .DELETE){ json in
-                    println(json)
                     completionHandler(response: 1)
                 }
             }

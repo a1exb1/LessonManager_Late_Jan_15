@@ -8,10 +8,12 @@
 
 import UIKit
 
-class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SelectStudentDelegate, SelectCourseDelegate {
+class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SelectStudentDelegate, SelectCourseDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
+    
+    var durationPicker = UIPickerView()
     
     var lesson:Lesson = Lesson()
     
@@ -51,12 +53,9 @@ class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rc = 0
+        
         switch section{
-        case 0:
-            rc = 2
-            
-            break
-            
+        case 0: rc = 3; break
         case 1:
             if lesson.LessonID > 0{
                 rc = 1
@@ -70,7 +69,7 @@ class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 2{
-            return 300
+            return 160
         }
         else{
             return 44
@@ -107,6 +106,14 @@ class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.textLabel!.text = "Course"
                 cell.detailTextLabel!.text = lesson.course.CourseID < 1 ? "Tap to select" : lesson.course.Name
                 
+            case 2:
+                cell.textLabel?.text = "Duration"
+                var p = UIPickerView(frame: CGRect(x: cell.bounds.origin.x + cell.bounds.width - 50, y: cell.bounds.origin.y, width: 50, height: cell.bounds.height))
+                p.delegate = self
+                cell.addSubview(p)
+                cell.selectedBackgroundView.backgroundColor = UIColor.clearColor()
+                p.selectRow((self.lesson.Duration / 15) - 1, inComponent: 0, animated: false)
+                break
                 
             default:
                 break
@@ -146,7 +153,7 @@ class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if indexPath.section == 1 && indexPath.row == 0{
             lesson.Delete(self.view){ response in
-                println(response) // this line needed ?!
+                println("") // this line needed ?!
                 self.navigationController?.popViewControllerAnimated(true)
             }
         }
@@ -191,6 +198,24 @@ class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableVi
     func didSelectCourse(course: Course) {
         self.lesson.course = course
         self.tableView.reloadData()
+    }
+    
+    /* PICKER */
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 12
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+        return String((row + 1) * 15)
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.lesson.Duration = (row + 1) * 15
     }
 
 }

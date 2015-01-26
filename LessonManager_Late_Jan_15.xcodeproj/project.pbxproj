@@ -81,7 +81,14 @@
 		E476401A1A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47640191A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift */; };
 		E476401C1A6D59FE00534B32 /* StudentCourseLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */; };
 		E476401E1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */; };
-		E49D02591A7073AB005305BE /* SelectCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D02581A7073AB005305BE /* SelectCourseTableViewController.swift */; };
+		E4891C2B1A73B956006598E3 /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4891C2A1A73B956006598E3 /* NSDateISO8601.swift */; };
+		E49A5ED01A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ECF1A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift */; };
+		E49A5ED21A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E49A5ED11A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib */; };
+		E49A5ED41A7657C1009A10BD /* EditingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ED31A7657C1009A10BD /* EditingTableViewController.swift */; };
+		E49A5ED61A76683D009A10BD /* ManageTermsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ED51A76683D009A10BD /* ManageTermsTableViewController.swift */; };
+		E49A5ED81A76687B009A10BD /* SaveTermTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ED71A76687B009A10BD /* SaveTermTableViewController.swift */; };
+		E49A5EDA1A767A5B009A10BD /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ED91A767A5B009A10BD /* Term.swift */; };
+		E49A5EDC1A769F40009A10BD /* DVDatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5EDB1A769F40009A10BD /* DVDatePickerTableViewCell.swift */; };
 		E49D025B1A7161DE005305BE /* SaveLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */; };
 		E4BD0B351A692C740034A8D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B341A692C740034A8D0 /* AppDelegate.swift */; };
 		E4BD0B3C1A692C740034A8D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BD0B3A1A692C740034A8D0 /* Main.storyboard */; };
@@ -101,7 +108,6 @@
 		E4BD0B6D1A692CE60034A8D0 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B611A692CE60034A8D0 /* Tools.swift */; };
 		E4BD0B6E1A692CE60034A8D0 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B621A692CE60034A8D0 /* Tutor.swift */; };
 		E4F7C4901A700BC600A3032B /* TimeSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F7C48F1A700BC600A3032B /* TimeSpan.swift */; };
-		E4F7C4941A7063F900A3032B /* SelectStudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F7C4931A7063F900A3032B /* SelectStudentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,7 +195,14 @@
 		E47640191A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageStudentCourseLinksTableViewController.swift; sourceTree = "<group>"; };
 		E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCourseLink.swift; sourceTree = "<group>"; };
 		E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveStudentCourseLinkViewController.swift; sourceTree = "<group>"; };
-		E49D02581A7073AB005305BE /* SelectCourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCourseTableViewController.swift; sourceTree = "<group>"; };
+		E4891C2A1A73B956006598E3 /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
+		E49A5ECF1A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaAttendenceCollectionViewCell.swift; sourceTree = "<group>"; };
+		E49A5ED11A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaAttendenceCollectionViewCellXib.xib; sourceTree = "<group>"; };
+		E49A5ED31A7657C1009A10BD /* EditingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingTableViewController.swift; sourceTree = "<group>"; };
+		E49A5ED51A76683D009A10BD /* ManageTermsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageTermsTableViewController.swift; sourceTree = "<group>"; };
+		E49A5ED71A76687B009A10BD /* SaveTermTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTermTableViewController.swift; sourceTree = "<group>"; };
+		E49A5ED91A767A5B009A10BD /* Term.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		E49A5EDB1A769F40009A10BD /* DVDatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveLessonViewController.swift; sourceTree = "<group>"; };
 		E4BD0B2F1A692C740034A8D0 /* LessonManager_Late_Jan_15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonManager_Late_Jan_15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BD0B331A692C740034A8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -213,7 +226,6 @@
 		E4BD0B611A692CE60034A8D0 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		E4BD0B621A692CE60034A8D0 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		E4F7C48F1A700BC600A3032B /* TimeSpan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSpan.swift; sourceTree = "<group>"; };
-		E4F7C4931A7063F900A3032B /* SelectStudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStudentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +259,7 @@
 		E4763F5D1A692D3A00534B32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E49A5ED31A7657C1009A10BD /* EditingTableViewController.swift */,
 				E4763F791A692F0000534B32 /* Manage */,
 				E4763F5E1A692D4200534B32 /* Agenda */,
 			);
@@ -265,6 +278,7 @@
 		E4763F611A692DA400534B32 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				E49A5EDB1A769F40009A10BD /* DVDatePickerTableViewCell.swift */,
 				E4763F621A692DB500534B32 /* AgendaItemTableViewCell.swift */,
 				E4763F631A692DB500534B32 /* CardTableViewCell.swift */,
 				E4763F641A692DB500534B32 /* EditingTextFieldTableViewCell.swift */,
@@ -281,6 +295,8 @@
 				E4763F701A692E7600534B32 /* AgendaStudentCollectionViewCellXib.xib */,
 				E4763F6D1A692E5200534B32 /* AgendaLessonCollectionViewCell.swift */,
 				E4763F731A692E8B00534B32 /* AgendaLessonCollectionViewCellXib.xib */,
+				E49A5ECF1A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift */,
+				E49A5ED11A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib */,
 			);
 			name = CollectionViewCells;
 			sourceTree = "<group>";
@@ -293,7 +309,7 @@
 				E47640121A6D553400534B32 /* ManageTutorsTableViewController.swift */,
 				E4763F7A1A692F0800534B32 /* ManageStudentsTableViewController.swift */,
 				E47640191A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift */,
-				E4F7C4921A7063D500A3032B /* Select */,
+				E49A5ED51A76683D009A10BD /* ManageTermsTableViewController.swift */,
 				E4F7C4911A7063BF00A3032B /* Save */,
 			);
 			name = Manage;
@@ -354,6 +370,17 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		E4891C291A73B926006598E3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E4BD0B611A692CE60034A8D0 /* Tools.swift */,
+				E4763F771A692ED300534B32 /* AutoLayoutHelper.swift */,
+				E4763F751A692EBA00534B32 /* AFDateExtention.swift */,
+				E4891C2A1A73B956006598E3 /* NSDateISO8601.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		E4BD0B261A692C730034A8D0 = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +406,7 @@
 				E4763F611A692DA400534B32 /* TableViewCells */,
 				E4763F5D1A692D3A00534B32 /* ViewControllers */,
 				E4763F541A692D1200534B32 /* CalenderControl */,
+				E4891C291A73B926006598E3 /* Tools */,
 				E4BD0B561A692CD10034A8D0 /* Models */,
 				E4BD0B341A692C740034A8D0 /* AppDelegate.swift */,
 				E4BD0B3A1A692C740034A8D0 /* Main.storyboard */,
@@ -418,8 +446,6 @@
 		E4BD0B561A692CD10034A8D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E4763F771A692ED300534B32 /* AutoLayoutHelper.swift */,
-				E4763F751A692EBA00534B32 /* AFDateExtention.swift */,
 				E4BD0B571A692CE60034A8D0 /* Client.swift */,
 				E4BD0B581A692CE60034A8D0 /* Course.swift */,
 				E4BD0B591A692CE60034A8D0 /* JSONReader.swift */,
@@ -430,10 +456,10 @@
 				E4BD0B5E1A692CE60034A8D0 /* Session.swift */,
 				E4BD0B5F1A692CE60034A8D0 /* Student.swift */,
 				E4BD0B601A692CE60034A8D0 /* swiftyJSON.swift */,
-				E4BD0B611A692CE60034A8D0 /* Tools.swift */,
 				E4BD0B621A692CE60034A8D0 /* Tutor.swift */,
 				E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */,
 				E4F7C48F1A700BC600A3032B /* TimeSpan.swift */,
+				E49A5ED91A767A5B009A10BD /* Term.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -446,17 +472,9 @@
 				E47640161A6D554D00534B32 /* SaveTutorTableViewController.swift */,
 				E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */,
 				E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */,
+				E49A5ED71A76687B009A10BD /* SaveTermTableViewController.swift */,
 			);
 			name = Save;
-			sourceTree = "<group>";
-		};
-		E4F7C4921A7063D500A3032B /* Select */ = {
-			isa = PBXGroup;
-			children = (
-				E4F7C4931A7063F900A3032B /* SelectStudentTableViewController.swift */,
-				E49D02581A7073AB005305BE /* SelectCourseTableViewController.swift */,
-			);
-			name = Select;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +609,7 @@
 				E4763FB61A6931D800534B32 /* 728-clock@2x.png in Resources */,
 				E4763FD31A6931D800534B32 /* 839-mobile-phone-toolbar-selected.png in Resources */,
 				E4763FD11A6931D800534B32 /* 766-arrow-right-toolbar@2x.png in Resources */,
+				E49A5ED21A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib in Resources */,
 				E4763FD21A6931D800534B32 /* 766-arrow-right-toolbar@3x.png in Resources */,
 				E4763FBA1A6931D800534B32 /* 735-phone-selected@3x.png in Resources */,
 			);
@@ -615,6 +634,8 @@
 				E4763F711A692E7600534B32 /* AgendaStudentCollectionViewCell.swift in Sources */,
 				E4BD0B671A692CE60034A8D0 /* LMColor.swift in Sources */,
 				E4763F7C1A692F0800534B32 /* ManageStudentsTableViewController.swift in Sources */,
+				E49A5EDA1A767A5B009A10BD /* Term.swift in Sources */,
+				E49A5ED01A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift in Sources */,
 				E4763F6E1A692E5200534B32 /* AgendaLessonCollectionViewCell.swift in Sources */,
 				E4BD0B641A692CE60034A8D0 /* Course.swift in Sources */,
 				E4BD0B691A692CE60034A8D0 /* Response.swift in Sources */,
@@ -628,15 +649,18 @@
 				E47640131A6D553400534B32 /* ManageCoursesDetailTableViewController.swift in Sources */,
 				E4BD0B6A1A692CE60034A8D0 /* Session.swift in Sources */,
 				E4BD0B681A692CE60034A8D0 /* Person.swift in Sources */,
+				E49A5EDC1A769F40009A10BD /* DVDatePickerTableViewCell.swift in Sources */,
 				E4BD0B6E1A692CE60034A8D0 /* Tutor.swift in Sources */,
 				E49D025B1A7161DE005305BE /* SaveLessonViewController.swift in Sources */,
 				E4BD0B6C1A692CE60034A8D0 /* swiftyJSON.swift in Sources */,
 				E4763F781A692ED300534B32 /* AutoLayoutHelper.swift in Sources */,
 				E4763F5C1A692D3600534B32 /* AgendaMaster2TableViewController.swift in Sources */,
+				E4891C2B1A73B956006598E3 /* NSDateISO8601.swift in Sources */,
+				E49A5ED81A76687B009A10BD /* SaveTermTableViewController.swift in Sources */,
 				E4763F6A1A692DB500534B32 /* MarginedTableViewCell.swift in Sources */,
 				E4763F681A692DB500534B32 /* CardTableViewCell.swift in Sources */,
 				E4BD0B6D1A692CE60034A8D0 /* Tools.swift in Sources */,
-				E4F7C4941A7063F900A3032B /* SelectStudentTableViewController.swift in Sources */,
+				E49A5ED61A76683D009A10BD /* ManageTermsTableViewController.swift in Sources */,
 				E476401E1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift in Sources */,
 				E4763F671A692DB500534B32 /* AgendaItemTableViewCell.swift in Sources */,
 				E4BD0B661A692CE60034A8D0 /* Lesson.swift in Sources */,
@@ -644,12 +668,12 @@
 				E4763F601A692D8B00534B32 /* AgendaDetailCollectionViewController.swift in Sources */,
 				E4763F5A1A692D2200534B32 /* CalenderMonthCollectionViewCell.swift in Sources */,
 				E4763F691A692DB500534B32 /* EditingTextFieldTableViewCell.swift in Sources */,
+				E49A5ED41A7657C1009A10BD /* EditingTableViewController.swift in Sources */,
 				E4763F7D1A692F0800534B32 /* SaveStudentTableViewController.swift in Sources */,
 				E47640181A6D554D00534B32 /* SaveTutorTableViewController.swift in Sources */,
 				E4763F581A692D2200534B32 /* CalenderControl.swift in Sources */,
 				E4F7C4901A700BC600A3032B /* TimeSpan.swift in Sources */,
 				E47640171A6D554D00534B32 /* SaveCourseTableViewController.swift in Sources */,
-				E49D02591A7073AB005305BE /* SelectCourseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

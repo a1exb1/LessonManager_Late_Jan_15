@@ -179,10 +179,9 @@ class SaveTutorTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //println("clicked")
         if indexPath.section == 3 && indexPath.row == 0{
             tutor.Delete(self.view){ response in
-                println(response)
+                println("")
                 self.navigationController?.popViewControllerAnimated(true)
             }
         }

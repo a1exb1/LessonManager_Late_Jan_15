@@ -32,7 +32,7 @@ class Student: Person {
     }
     
     func Delete(view:UIView, completionHandler:(response: Int) -> ()){
-        Tools.ShowAlertController(view, message: "Are you sure you want to delete student: " + Name + "?"){ response in
+        Tools.ShowAlertController("Are you sure you want to delete student: " + Name + "?"){ response in
             if response == 1{
                 var urlString = Tools.WebApiURL(self.webApiControllerName) + "/" + String(self.PersonID)
                 JSONReader.JsonAsyncRequest(urlString, data: nil, httpMethod: .DELETE){ json in
