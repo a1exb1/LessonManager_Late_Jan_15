@@ -14,6 +14,9 @@ class Course: NSObject {
     var CourseID:Int = 0
     var Name:String = ""
     var tutor:Tutor = Tutor()
+    var Active = "Y"
+    var DefaultDuration = 0
+    var EnteredDate = NSDate.ISOStringFromDate(NSDate())
     
     init(json:JSON){
         super.init()
@@ -29,7 +32,11 @@ class Course: NSObject {
         var data:Dictionary<String, AnyObject> = [
             "CourseID": CourseID,
             "CourseName" : Name,
-            "TutorID": tutor.PersonID
+            "TutorID": tutor.PersonID,
+            "Active": Active,
+            "ClientID": session.client.ClientID,
+            "DefaultDuration": 0,
+            "EnteredDate": NSDate.ISOStringFromDate(NSDate())
         ]
         
         var method:HttpMethod = CourseID > 0 ? .PUT : .POST

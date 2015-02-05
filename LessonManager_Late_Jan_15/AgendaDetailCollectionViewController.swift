@@ -8,12 +8,13 @@
 
 import UIKit
 
-class AgendaDetailCollectionViewController: UICollectionViewController {
+class AgendaDetailCollectionViewController: UICollectionViewController, SessionDelegate, AgendaAttendenceCollectionViewCellDelegate {
 
     var lesson:Lesson? = nil
     //var splitView:SplitView? = nil
     //var masterView:AgendaMasterTableViewController? = nil
     var lessonCount:Int = 0
+    var viewDidAppear:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +30,31 @@ class AgendaDetailCollectionViewController: UICollectionViewController {
 //        UIBarButtonItem(image: UIImage(named: "765-arrow-left-toolbar"), style: UIBarButtonItemStyle.Bordered, target: self, action: "")]
         
         self.navigationController?.navigationBar.translucent = false
+        session.agendaDetailDelegate = self
     }
     
+    func detailNeedsUpdate(){
+        reload(false)
+    }
+    
+    func reload(var triggerMaster:Bool){
+        lesson?.Load(){ response in
+            println("")
+            self.collectionView?.reloadData()
+            if triggerMaster{
+                if Tools.Device() == .Pad{
+                    session.agendaMasterDelegate?.masterNeedsUpdate?()
+                }
+            }
+        }
+    }
     
     override func viewDidAppear(animated: Bool) {
         //splitView?.addDetailMenuButtonToNavigationBar(self.navigationItem, button: UIBarButtonItem(title: "Agenda", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil))
         
-        lesson?.Load(){ response in
-            println("")
-            self.collectionView?.reloadData()
-            if Tools.Device() == .Pad{
-                session.agendaMasterDelegate?.masterNeedsUpdate()
-            }
-        }
+        super.viewDidAppear(animated)
+        reload(viewDidAppear)
+        self.viewDidAppear = true
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -65,27 +78,33 @@ class AgendaDetailCollectionViewController: UICollectionViewController {
         
         var cell:UICollectionViewCell = UICollectionViewCell()
         
+        var borderHeight:CGFloat = 3
+        
         switch indexPath.row{
+        
         case 0:
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("LessonCollectionViewCell", forIndexPath: indexPath) as AgendaLessonCollectionViewCell
+            cell.backgroundColor = UIColor.whiteColor()
+            (cell as AgendaLessonCollectionViewCell).setup(lesson!)
+            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.maroonColor(), height:borderHeight)
+            break
+            
+        case 1:
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("StudentCollectionViewCell", forIndexPath: indexPath) as AgendaStudentCollectionViewCell
             
             //Tools.AddShadowToView(cell.viewForBaselineLayout()!)
             cell.backgroundColor = UIColor.whiteColor()
             (cell as AgendaStudentCollectionViewCell).setup(lesson!.student)
-            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.navyColor(), height:2)
-            break
-        case 1:
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("LessonCollectionViewCell", forIndexPath: indexPath) as AgendaLessonCollectionViewCell
-            cell.backgroundColor = UIColor.whiteColor()
-            (cell as AgendaLessonCollectionViewCell).setup(lesson!)
-            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.maroonColor(), height:2)
+            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.navyColor(), height:borderHeight)
+            (cell as AgendaStudentCollectionViewCell).tableView.reloadData()
             break
             
         case 2:
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("AttendenceCollectionViewCell", forIndexPath: indexPath) as UICollectionViewCell
             cell.backgroundColor = UIColor.whiteColor()
             (cell as AgendaAttendenceCollectionViewCell).setup(lesson!)
-            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.greenColor(), height:2)
+            (cell as AgendaAttendenceCollectionViewCell).delegate = self
+            Tools.AddTopBorderToView(cell.viewForBaselineLayout()!, color:LMColor.greenColor(), height:borderHeight)
             break
             
         default:
@@ -101,30 +120,36 @@ class AgendaDetailCollectionViewController: UICollectionViewController {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
+        var height:CGFloat = 200
+        
+        if indexPath.row == 0{
+            //height = 90
+        }
+        
         //return CGSize(width: 220, height: 160)
         if (self.view.bounds.width < 500){
-            return CGSize(width: self.view.bounds.width - 30, height: 200)
+            return CGSize(width: self.view.bounds.width - 30, height: height)
         }
         else{
             var boundsWidth:CGFloat = self.view.bounds.width
             var width:CGFloat = 300
-            
-            if boundsWidth < 700{
-                width = (boundsWidth / 2) - 20;
-            }
-            else{
-                width = (boundsWidth / 3) - 20;
-            }
-            return CGSize(width: width, height: 200)
+            width = (boundsWidth / 2) - 20;
+//            if boundsWidth < 700{
+//                width = (boundsWidth / 2) - 20;
+//            }
+//            else{
+//                width = (boundsWidth / 3) - 20;
+//            }
+            return CGSize(width: width, height: height)
         }
         
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row{
-        case 0: editStudent(); break
-        case 1: editLesson(); break
-            
+        case 0: editLesson(); break
+        case 1: editStudent(); break
+
         default:
             break
         }
@@ -176,20 +201,14 @@ class AgendaDetailCollectionViewController: UICollectionViewController {
         collectionView?.setContentOffset(CGPointMake(0, compensateHeight), animated: true)
     }
     
-    func didRotate(){
-        collectionView?.reloadData()
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        collectionView?.collectionViewLayout.invalidateLayout()
     }
     
     func editStudent(){
         var navigationController = UINavigationController()
-        
         var view:SaveStudentTableViewController = SaveStudentTableViewController()
         view.student = lesson!.student
-        //navigationController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
-        //navigationController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-        
-        //navigationController.pushViewController(view, animated: false)
-        //self.view.window!.rootViewController!.presentViewController(navigationController, animated:true, completion:nil)
         self.navigationController?.pushViewController(view, animated: true)
         
     }
@@ -201,6 +220,11 @@ class AgendaDetailCollectionViewController: UICollectionViewController {
         v.lesson = lesson!
         self.navigationController?.pushViewController(v, animated: true)
         
+    }
+    
+    func agendaAttendenceCellDidChangeAttendence(status:LessonStatus){
+        lesson?.Status = status
+        reload(false)
     }
 
 }

@@ -15,6 +15,8 @@ class Client: NSObject{
     var ClientUserName = ""
     var Tutors:Array<Tutor> = []
     var Students:Array<Student> = []
+    var Active = "Y"
+    var EnteredDate = NSDate.ISOStringFromDate(NSDate())
     
     func GetTutorsAndCourses(completionHandler:(response: Int) -> ()){
         var urlString = Tools.WebMvcController("Client", action: "GetTutorsAndCourses")
@@ -35,8 +37,9 @@ class Client: NSObject{
     
     func GetStudents(completionHandler:(response: Int) -> ()){
         var urlString = Tools.WebMvcController("Client", action: "GetStudents");
-        var data = [
-            "ClientID": ClientID
+        var data:Dictionary<String, AnyObject> = [
+            "ClientID": ClientID,
+            "Active": Active
         ]
         JSONReader.JsonAsyncRequest(urlString, data: data, httpMethod: .POST){ json in
             self.Students = []

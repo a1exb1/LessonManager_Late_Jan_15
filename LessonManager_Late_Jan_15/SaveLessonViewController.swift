@@ -39,8 +39,6 @@ class SaveLessonViewController: UIViewController, UITableViewDelegate, UITableVi
         if let path = self.tableView.indexPathForSelectedRow(){
             tableView.deselectRowAtIndexPath(path, animated: true)
         }
-        
-        
     }
     
     

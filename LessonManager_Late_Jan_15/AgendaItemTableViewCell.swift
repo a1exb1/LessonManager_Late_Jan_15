@@ -100,6 +100,9 @@ class AgendaItemTableViewCell: UITableViewCell {
         var statusid = order[control.selectedSegmentIndex]
         var status = LessonStatus(rawValue: statusid)!
         lesson.SetAttendance(status){ response in
+            if Tools.Device() == .Pad{
+                session.agendaDetailDelegate?.detailNeedsUpdate?()
+            }
         }
     }
 

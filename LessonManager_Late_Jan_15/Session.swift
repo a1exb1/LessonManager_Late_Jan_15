@@ -8,8 +8,9 @@
 
 import UIKit
 
-protocol SessionDelegate{
-    func masterNeedsUpdate()
+@objc protocol SessionDelegate{
+    optional func masterNeedsUpdate()
+    optional func detailNeedsUpdate()
 }
 
 class Session: NSObject {
@@ -18,4 +19,5 @@ class Session: NSObject {
     //var activeViewController:AnyObject? = nil
     //var delegates:Array<SessionDelegate> = []
     var agendaMasterDelegate:SessionDelegate? = nil
+    var agendaDetailDelegate:SessionDelegate? = nil
 }

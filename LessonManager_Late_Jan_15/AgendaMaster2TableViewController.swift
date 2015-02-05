@@ -8,10 +8,10 @@
 
 import UIKit
 
-class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalenderControlDelegate, SessionDelegate {
+class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalenderControlDelegate, SessionDelegate, CalenderWeekWebViewDelegate, LoginDelegate {
 
     //var detailViewController: DetailViewController? = nil
-    var calenderView:CalenderControl? = nil
+    var calenderView:CalenderControl2? = nil
     
     var tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Grouped)
     var lessons:Array<Lesson> = []
@@ -20,7 +20,10 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     var monthData: Dictionary<NSDate,JSON> = Dictionary<NSDate, JSON>()
     //var toolbar:UIToolbar = UIToolbar()
     @IBOutlet weak var toolbar: UIToolbar!
+    var calenderModeControl: UISegmentedControl = UISegmentedControl()
     var settingsNvc = UINavigationController()
+    
+    var selectedIndexPath:NSIndexPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +58,41 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
 //            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
 //        }
         
+        calenderModeControl.frame = CGRect(x: 8, y: 8, width: 180, height: toolbar.frame.height - 16)
+        calenderModeControl.insertSegmentWithTitle("Agenda", atIndex: 0, animated: false)
+        calenderModeControl.insertSegmentWithTitle("Week", atIndex: 1, animated: false)
+        calenderModeControl.addTarget(self, action: "calenderMode:", forControlEvents: UIControlEvents.ValueChanged)
+        calenderModeControl.selectedSegmentIndex = 0
+        toolbar.addSubview(calenderModeControl)
+        //var leftButton:UIBarButtonItem = UIBarButtonItem(title: "Today", style: UIBarButtonItemStyle.Bordered, target: self, action: "setToday")
+        
+        var manageBtn:UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "742-wrench.png"), style: UIBarButtonItemStyle.Bordered, target: self, action: "goToSettings")
+        
+        var flex = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolbar.setItems([flex, manageBtn], animated: true)
+        toolbar.sizeToFit()
+        
         session.agendaMasterDelegate = self
+        
+        
+    }
+    
+    func calenderMode(control:UISegmentedControl){
+        calenderModeControl.selectedSegmentIndex = 0
+        var nav = UINavigationController()
+        var v = CalenderWeekWebViewController()
+        v.tutor = session.tutor
+        v.selectedDate = calenderView!.selectedDate
+        v.delegate = self
+        nav.pushViewController(v, animated: false)
+        self.presentViewController(nav, animated: false, completion: nil)
+    }
+    
+    func calenderWeekWebViewDidChangeDate(date: NSDate){
+        calenderView?.selectDate(date)
+        getData()
+        getMonthData()
     }
     
     func masterNeedsUpdate(){
@@ -70,24 +107,35 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     
     override func viewWillAppear(animated: Bool) {
         if calenderView == nil{
-            calenderView = CalenderControl(origin: self.view, navigationItem:navigationItem)
-            calenderView?.delegate = self
-            calenderView?.setIsMonthMode(true)
+            calenderView = CalenderControl2(origin: self.view, navigationItem:navigationItem)
+            calenderView?.calenderControlDelegate = self
+            //calenderView?.setIsMonthMode(true)
         }
         
         getMonthData()
         self.calenderControlDidSelectDate(calenderView!.selectedDate)
     }
     
-    func switchCalenderMode(){
-        calenderView?.setIsMonthMode(!calenderView!.isMonthMode)
+//    func switchCalenderMode(){
+//        calenderView?.setIsMonthMode(!calenderView!.isMonthMode)
+//    }
+    
+    func didLogin(){
+        viewWillAppear(false)
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
         layoutViews()
-        //getData();println(1)
+        
+        if session.tutor.PersonID == 0{
+            var v = LoginTutorTableViewController()
+            v.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+            v.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+            v.loginDelegate = self
+            self.presentViewController(v, animated: false, completion: nil)
+        }
     }
     
     func calenderControlDidChangeMode() {
@@ -99,18 +147,6 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     }
     
     func layoutViews(){
-        //toolbar items
-        var leftButton:UIBarButtonItem = UIBarButtonItem(title: "Today", style: UIBarButtonItemStyle.Bordered, target: self, action: "setToday")
-        
-        var manageBtn:UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "742-wrench.png"), style: UIBarButtonItemStyle.Bordered, target: self, action: "goToSettings")
-        
-        var flex = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        
-        //self.toolbarItems = [leftButton, flex, manageBtn]
-        //toolbar.frame = CGRectMake(0, self.view.frame.size.height - 46, self.view.frame.size.width, 46)
-        toolbar.sizeToFit()
-        toolbar.setItems([leftButton, flex, manageBtn], animated: true)
-        
         tableView.frame = CGRect(x: 0, y: calenderView!.frame.height, width: self.view.frame.width, height: self.view.frame.height - calenderView!.frame.height - toolbar.frame.height)
         var indexPath = self.tableView.indexPathForSelectedRow()
         if indexPath != nil{
@@ -138,6 +174,7 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     func calenderControlDidSelectDate(date: NSDate) {
         Tools.AddLoaderToView(self.tableView)
         getData()//;println(2)
+        self.selectedIndexPath = nil
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -160,6 +197,7 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
         session.tutor.GetLessons(calenderView!.selectedDate){ lessons in
             self.lessons = lessons
             self.tableView.reloadData()
+            self.selectCellIfNeccessary()
             Tools.HideLoaderFromView(self.tableView)
             self.tableView.hidden = false
         }
@@ -182,13 +220,11 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:AgendaItemTableViewCell = AgendaItemTableViewCell(lesson: lessons[indexPath.row])
-        
-        // Configure the cell...
-        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedIndexPath = indexPath
         self.performSegueWithIdentifier("showDetailLesson", sender: self)
     }
     
@@ -206,9 +242,16 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
                 }
                 else{
                     tableView.reloadData()
+                    self.selectCellIfNeccessary()
                 }
                 
             }
+        }
+    }
+    
+    func selectCellIfNeccessary(){
+        if let indexPath = self.selectedIndexPath{
+            self.tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.None)
         }
     }
 

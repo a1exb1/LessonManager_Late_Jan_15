@@ -8,13 +8,17 @@
 
 import UIKit
 
+protocol AgendaAttendenceCollectionViewCellDelegate{
+    func agendaAttendenceCellDidChangeAttendence(status:LessonStatus)
+}
+
 class AgendaAttendenceCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
     var lesson:Lesson = Lesson()
-    
+    var delegate: AgendaAttendenceCollectionViewCellDelegate? = nil
     
     func setup(var lesson:Lesson){
         self.lesson = lesson
@@ -34,11 +38,12 @@ class AgendaAttendenceCollectionViewCell: UICollectionViewCell, UITableViewDeleg
         var statusid = order[control.selectedSegmentIndex]
         var status = LessonStatus(rawValue: statusid)!
         self.lesson.SetAttendance(status){ response in
-            
+            self.delegate?.agendaAttendenceCellDidChangeAttendence(status)
+            if Tools.Device() == .Pad{
+                session.agendaMasterDelegate?.masterNeedsUpdate?()
+            }
         }
     }
-    
-    
     
     //TABLE VIEW
     

@@ -18,7 +18,8 @@ class Person: NSObject {
     var Mobile: String = ""
     var Email: String = ""
     var AccountType:Int = 0
-    var Active: String = "N"
+    var Active: String = "Y"
+    var EnteredDate = NSDate.ISOStringFromDate(NSDate())
     //var Lessons: Dictionary<NSDate, Array<Lesson>> = Dictionary<NSDate, Array<Lesson>>()
     
     func setProperties(json:JSON){
@@ -28,7 +29,7 @@ class Person: NSObject {
         self.UserName = json["UserName"].stringValue
         self.Password = json["Password"].stringValue
         self.AccountType = json["AccountType"].intValue
-        self.Active = json["Active"].string == nil ? "N" : json["Active"].stringValue
+        //self.Active = json["Active"].string == nil ? "N" : json["Active"].stringValue
     }
 }
 

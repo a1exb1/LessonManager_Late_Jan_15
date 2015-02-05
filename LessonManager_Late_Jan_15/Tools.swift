@@ -111,7 +111,10 @@ class Tools: NSObject {
         actInd.center = view.center
         actInd.hidesWhenStopped = true
         actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        actInd.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(actInd)
+        actInd.addCenterYConstraint(toView: view)
+        actInd.addCenterXConstraint(toView: view)
         actInd.startAnimating()
     }
     
@@ -411,6 +414,22 @@ class Tools: NSObject {
         Tools.TopMostController().presentViewController(alertController, animated: true){}
     }
     
+    class func ShowAlertControllerWithButtonTitle(confirmBtnTitle:String, confirmBtnStyle:UIAlertActionStyle, message:String, completionHandler:(response: Int) -> ()){
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            completionHandler(response: 0)
+        }
+        alertController.addAction(cancelAction)
+        
+        let destroyAction = UIAlertAction(title: confirmBtnTitle, style: confirmBtnStyle) { (action) in
+            completionHandler(response: 1)
+        }
+        alertController.addAction(destroyAction)
+        
+        Tools.TopMostController().presentViewController(alertController, animated: true){}
+    }
+    
     class func TopMostController() -> UIViewController
     {
         var topController = UIApplication.sharedApplication().keyWindow!.rootViewController;
@@ -431,5 +450,23 @@ class TextFieldViewWithTextField{
     var view:UIView = UIView()
     var textField:UITextField = UITextField()
 }
+
+extension UIColor{
+    class func randomColor() -> UIColor{
+        var randomRed:CGFloat = CGFloat(drand48())
+        var randomGreen:CGFloat = CGFloat(drand48())
+        var randomBlue:CGFloat = CGFloat(drand48())
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
+    }
+}
+
+extension String{
+    mutating func replace(string:String, withString:String) -> String {
+        self = self.stringByReplacingOccurrencesOfString(string, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        return self
+    }
+}
+
 
 

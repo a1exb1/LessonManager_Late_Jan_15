@@ -40,7 +40,6 @@ class Term: NSObject {
             "StartDate": NSDate.ISOStringFromDate(StartDate),
             "EndDate": NSDate.ISOStringFromDate(EndDate)
         ]
-        println(data)
         
         var method:HttpMethod = TermID > 0 ? .PUT : .POST
         JSONReader.JsonAsyncRequest(urlString, data: data, httpMethod: method){ json in
@@ -57,6 +56,26 @@ class Term: NSObject {
                 var urlString = Tools.WebApiURL(self.webApiControllerName) + "/" + String(self.TermID)
                 JSONReader.JsonAsyncRequest(urlString, data: nil, httpMethod: .DELETE){ json in
                     completionHandler(response: 1)
+                }
+            }
+        }
+    }
+    
+    func AddLessonsForAllCourses(var tutor:Tutor, completionHandler:(response: Int) -> ()){
+        var urlString = Tools.WebMvcController("Term", action: "AddLessonsForTutorInTerm")
+        var data = [
+            "TutorID": tutor.PersonID,
+            "TermID": TermID,
+            "CourseID": 0
+        ]
+        JSONReader.JsonAsyncRequest(urlString, data: data, httpMethod: .POST){ json in
+            var response = Response(json: json["Response"])
+            if response.Status == 0{
+                Tools.ShowAlertControllerOK("Failed: " + response.Message){response in}
+            }
+            else{
+                Tools.ShowAlertControllerOK(json["NumberOfLessonsAdded"].stringValue +  " lessons added!"){ r in
+                    completionHandler(response: response.Status)
                 }
             }
         }

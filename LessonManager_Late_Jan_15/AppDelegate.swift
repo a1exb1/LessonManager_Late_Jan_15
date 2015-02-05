@@ -15,21 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         window!.tintColor = LMColor.purpleColor()
-        
-        session.tutor.Login("bm.alex", password: "aaa"){ response in
-            
-        }
+//        session.tutor.Login("bm.alex", password: "aaa"){ response in
+//            
+//        }
         let splitViewController = self.window!.rootViewController as UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
         navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
         splitViewController.delegate = self
-            
+        
         //}
         return true
     }

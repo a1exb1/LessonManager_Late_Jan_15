@@ -26,6 +26,7 @@ class Lesson: NSObject {
     var Date: NSDate = NSDate()
     var EndDate:NSDate = NSDate()
     var Status:LessonStatus = .NotSet
+    var Active = "Y"
     
     override init() {
         super.init()
@@ -71,7 +72,10 @@ class Lesson: NSObject {
             "Duration": Duration,
             "CourseID": course.CourseID,
             "StudentID": student.PersonID,
-            "LessonDateTime": NSDate.ISOStringFromDate(Date) // Tools.StringISO8601FromDate(Date) //"2015-01-07T12:15:00"
+            "LessonDateTime": NSDate.ISOStringFromDate(Date),
+            "Status": Status.rawValue,
+            "Active": Active
+            // Tools.StringISO8601FromDate(Date) //"2015-01-07T12:15:00"
         ]
         var method:HttpMethod = LessonID > 0 ? .PUT : .POST
         if isValid(){

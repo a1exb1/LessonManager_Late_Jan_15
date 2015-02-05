@@ -15,6 +15,8 @@ class StudentCourseLink: NSObject {
     var student:Student = Student()
     var course:Course = Course()
     var tutor:Tutor = Tutor()
+    var Active = "Y"
+    var Frequency = 0
     
     var LessonTime:TimeSpan = TimeSpan()
     
@@ -37,8 +39,11 @@ class StudentCourseLink: NSObject {
             "Minute": LessonTime.Minute,
             "CourseID": course.CourseID,
             "TutorID": tutor.PersonID,
-            "StudentID": student.PersonID
+            "StudentID": student.PersonID,
+            "Active": Active,
+            "Frequency": Frequency
         ]
+        println(data)
         var method:HttpMethod = StudentCourseLinkID > 0 ? .PUT : .POST
         if isValid(){
             JSONReader.JsonAsyncRequest(urlString, data: data, httpMethod: method){ json in

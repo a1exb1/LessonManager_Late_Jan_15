@@ -86,5 +86,23 @@ class SaveTermTableViewController: EditingTableViewController {
     
     override func editingTableView(tableView: UITableView, didSelectRowWithIdentifier identifier: String) {
         println(identifier)
+        if identifier == "AddLessons"{
+            
+            Tools.ShowAlertControllerWithButtonTitle("Add lessons", confirmBtnStyle: UIAlertActionStyle.Default, message: "Do you want to add lessons for all courses to this term?"){ response in
+                if response == 1{
+                    self.term.AddLessonsForAllCourses(session.tutor){ r in
+                        if r == 1{
+                            
+                            if self.editing && self.didChange{
+                                self.setEditing(!self.editing, animated: true)
+                            }
+                            else{
+                                self.navigationController?.popViewControllerAnimated(true)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

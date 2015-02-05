@@ -20,7 +20,9 @@ class Student: Person {
             "Telephone": Phone,
             "Mobile": Mobile,
             "ClientID": session.client.ClientID,
-            "Email": Email
+            "Email": Email,
+            "Active": Active,
+            "EnteredDate": NSDate.ISOStringFromDate(NSDate())
         ]
         
         var method:HttpMethod = PersonID > 0 ? .PUT : .POST

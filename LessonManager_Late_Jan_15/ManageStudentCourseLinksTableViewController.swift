@@ -23,9 +23,20 @@ class ManageStudentCourseLinksTableViewController: UITableViewController {
         if tutor == nil{
             tutor = session.tutor
         }
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "newStudentCourseLink"), self.editButtonItem()]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "newStudentCourseLink"), self.editButtonItem(),
+            UIBarButtonItem(title: "View", style: UIBarButtonItemStyle.Bordered, target: self, action: "changeView")
+        ]
         
         self.title = "\(tutor!.Name)'s lesson slots"
+    }
+    
+    func changeView(){
+        var v = StudentCourseLinksWebViewController()
+        v.tutor = tutor!
+        var nav = UINavigationController()
+        nav.pushViewController(v, animated: false)
+        self.presentViewController(nav, animated: true, completion: nil)
+        
     }
     
     override func viewDidAppear(animated: Bool) {

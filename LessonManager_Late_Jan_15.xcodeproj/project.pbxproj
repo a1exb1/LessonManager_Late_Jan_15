@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E4763F581A692D2200534B32 /* CalenderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F551A692D2200534B32 /* CalenderControl.swift */; };
-		E4763F591A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4763F561A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib */; };
 		E4763F5A1A692D2200534B32 /* CalenderMonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F571A692D2200534B32 /* CalenderMonthCollectionViewCell.swift */; };
 		E4763F5C1A692D3600534B32 /* AgendaMaster2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F5B1A692D3600534B32 /* AgendaMaster2TableViewController.swift */; };
 		E4763F601A692D8B00534B32 /* AgendaDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4763F5F1A692D8B00534B32 /* AgendaDetailCollectionViewController.swift */; };
@@ -82,6 +81,20 @@
 		E476401C1A6D59FE00534B32 /* StudentCourseLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */; };
 		E476401E1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */; };
 		E4891C2B1A73B956006598E3 /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4891C2A1A73B956006598E3 /* NSDateISO8601.swift */; };
+		E48DF6B51A7E921A0082B8B8 /* ABInfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DF6B41A7E921A0082B8B8 /* ABInfiniteScrollView.swift */; };
+		E48DF6B71A7E92680082B8B8 /* CalenderControl2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DF6B61A7E92680082B8B8 /* CalenderControl2.swift */; };
+		E48DF6B91A7FE38A0082B8B8 /* CalenderWeekWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DF6B81A7FE38A0082B8B8 /* CalenderWeekWebViewController.swift */; };
+		E48DF6BC1A80D9F60082B8B8 /* CalenderScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DF6BB1A80D9F60082B8B8 /* CalenderScrollView.swift */; };
+		E48DF6BE1A80EB9C0082B8B8 /* StudentCourseLinksWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DF6BD1A80EB9C0082B8B8 /* StudentCourseLinksWebViewController.swift */; };
+		E48DF6C51A823BA00082B8B8 /* 768-female-toolbar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6BF1A823BA00082B8B8 /* 768-female-toolbar-selected.png */; };
+		E48DF6C61A823BA00082B8B8 /* 768-female-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6C01A823BA00082B8B8 /* 768-female-toolbar-selected@2x.png */; };
+		E48DF6C71A823BA00082B8B8 /* 768-female-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6C11A823BA00082B8B8 /* 768-female-toolbar-selected@3x.png */; };
+		E48DF6C81A823BA00082B8B8 /* 769-male-toolbar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6C21A823BA00082B8B8 /* 769-male-toolbar-selected.png */; };
+		E48DF6C91A823BA00082B8B8 /* 769-male-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6C31A823BA00082B8B8 /* 769-male-toolbar-selected@2x.png */; };
+		E48DF6CA1A823BA00082B8B8 /* 769-male-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6C41A823BA00082B8B8 /* 769-male-toolbar-selected@3x.png */; };
+		E48DF6CE1A828B8B0082B8B8 /* 730-envelope-toolbar-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6CB1A828B8B0082B8B8 /* 730-envelope-toolbar-selected.png */; };
+		E48DF6CF1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6CC1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@2x.png */; };
+		E48DF6D01A828B8B0082B8B8 /* 730-envelope-toolbar-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48DF6CD1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@3x.png */; };
 		E49A5ED01A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ECF1A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift */; };
 		E49A5ED21A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E49A5ED11A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib */; };
 		E49A5ED41A7657C1009A10BD /* EditingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ED31A7657C1009A10BD /* EditingTableViewController.swift */; };
@@ -89,6 +102,9 @@
 		E49A5ED81A76687B009A10BD /* SaveTermTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ED71A76687B009A10BD /* SaveTermTableViewController.swift */; };
 		E49A5EDA1A767A5B009A10BD /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5ED91A767A5B009A10BD /* Term.swift */; };
 		E49A5EDC1A769F40009A10BD /* DVDatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5EDB1A769F40009A10BD /* DVDatePickerTableViewCell.swift */; };
+		E49A5EDE1A781C09009A10BD /* LoginTutorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5EDD1A781C09009A10BD /* LoginTutorViewController.swift */; };
+		E49A5EE11A7824B7009A10BD /* LMdata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E49A5EE01A7824B7009A10BD /* LMdata.plist */; };
+		E49A5EE31A7A95C2009A10BD /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A5EE21A7A95C2009A10BD /* CalenderViewController.swift */; };
 		E49D025B1A7161DE005305BE /* SaveLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */; };
 		E4BD0B351A692C740034A8D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD0B341A692C740034A8D0 /* AppDelegate.swift */; };
 		E4BD0B3C1A692C740034A8D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BD0B3A1A692C740034A8D0 /* Main.storyboard */; };
@@ -122,7 +138,6 @@
 
 /* Begin PBXFileReference section */
 		E4763F551A692D2200534B32 /* CalenderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderControl.swift; sourceTree = "<group>"; };
-		E4763F561A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalenderMonthCellCollectionViewCellXib.xib; sourceTree = "<group>"; };
 		E4763F571A692D2200534B32 /* CalenderMonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderMonthCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4763F5B1A692D3600534B32 /* AgendaMaster2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaMaster2TableViewController.swift; sourceTree = "<group>"; };
 		E4763F5F1A692D8B00534B32 /* AgendaDetailCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDetailCollectionViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +211,20 @@
 		E476401B1A6D59FE00534B32 /* StudentCourseLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCourseLink.swift; sourceTree = "<group>"; };
 		E476401D1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveStudentCourseLinkViewController.swift; sourceTree = "<group>"; };
 		E4891C2A1A73B956006598E3 /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
+		E48DF6B41A7E921A0082B8B8 /* ABInfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABInfiniteScrollView.swift; sourceTree = "<group>"; };
+		E48DF6B61A7E92680082B8B8 /* CalenderControl2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderControl2.swift; sourceTree = "<group>"; };
+		E48DF6B81A7FE38A0082B8B8 /* CalenderWeekWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderWeekWebViewController.swift; sourceTree = "<group>"; };
+		E48DF6BB1A80D9F60082B8B8 /* CalenderScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderScrollView.swift; sourceTree = "<group>"; };
+		E48DF6BD1A80EB9C0082B8B8 /* StudentCourseLinksWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCourseLinksWebViewController.swift; sourceTree = "<group>"; };
+		E48DF6BF1A823BA00082B8B8 /* 768-female-toolbar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "768-female-toolbar-selected.png"; sourceTree = "<group>"; };
+		E48DF6C01A823BA00082B8B8 /* 768-female-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "768-female-toolbar-selected@2x.png"; sourceTree = "<group>"; };
+		E48DF6C11A823BA00082B8B8 /* 768-female-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "768-female-toolbar-selected@3x.png"; sourceTree = "<group>"; };
+		E48DF6C21A823BA00082B8B8 /* 769-male-toolbar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "769-male-toolbar-selected.png"; sourceTree = "<group>"; };
+		E48DF6C31A823BA00082B8B8 /* 769-male-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "769-male-toolbar-selected@2x.png"; sourceTree = "<group>"; };
+		E48DF6C41A823BA00082B8B8 /* 769-male-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "769-male-toolbar-selected@3x.png"; sourceTree = "<group>"; };
+		E48DF6CB1A828B8B0082B8B8 /* 730-envelope-toolbar-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "730-envelope-toolbar-selected.png"; sourceTree = "<group>"; };
+		E48DF6CC1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "730-envelope-toolbar-selected@2x.png"; sourceTree = "<group>"; };
+		E48DF6CD1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "730-envelope-toolbar-selected@3x.png"; sourceTree = "<group>"; };
 		E49A5ECF1A763F41009A10BD /* AgendaAttendenceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaAttendenceCollectionViewCell.swift; sourceTree = "<group>"; };
 		E49A5ED11A7642FD009A10BD /* AgendaAttendenceCollectionViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaAttendenceCollectionViewCellXib.xib; sourceTree = "<group>"; };
 		E49A5ED31A7657C1009A10BD /* EditingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingTableViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +232,9 @@
 		E49A5ED71A76687B009A10BD /* SaveTermTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTermTableViewController.swift; sourceTree = "<group>"; };
 		E49A5ED91A767A5B009A10BD /* Term.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 		E49A5EDB1A769F40009A10BD /* DVDatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		E49A5EDD1A781C09009A10BD /* LoginTutorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTutorViewController.swift; sourceTree = "<group>"; };
+		E49A5EE01A7824B7009A10BD /* LMdata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LMdata.plist; sourceTree = "<group>"; };
+		E49A5EE21A7A95C2009A10BD /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		E49D025A1A7161DE005305BE /* SaveLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveLessonViewController.swift; sourceTree = "<group>"; };
 		E4BD0B2F1A692C740034A8D0 /* LessonManager_Late_Jan_15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonManager_Late_Jan_15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BD0B331A692C740034A8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -250,8 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				E4763F551A692D2200534B32 /* CalenderControl.swift */,
-				E4763F561A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib */,
 				E4763F571A692D2200534B32 /* CalenderMonthCollectionViewCell.swift */,
+				E48DF6B61A7E92680082B8B8 /* CalenderControl2.swift */,
 			);
 			name = CalenderControl;
 			sourceTree = "<group>";
@@ -259,9 +291,11 @@
 		E4763F5D1A692D3A00534B32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E49A5EDF1A781C93009A10BD /* Login */,
 				E49A5ED31A7657C1009A10BD /* EditingTableViewController.swift */,
 				E4763F791A692F0000534B32 /* Manage */,
 				E4763F5E1A692D4200534B32 /* Agenda */,
+				E48DF6BA1A80D5EF0082B8B8 /* Calender */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -366,6 +400,15 @@
 				E4763FAC1A6931D800534B32 /* 1099-list-1-selected.png */,
 				E4763FAD1A6931D800534B32 /* 1099-list-1-selected@2x.png */,
 				E4763FAE1A6931D800534B32 /* 1099-list-1-selected@3x.png */,
+				E48DF6BF1A823BA00082B8B8 /* 768-female-toolbar-selected.png */,
+				E48DF6C01A823BA00082B8B8 /* 768-female-toolbar-selected@2x.png */,
+				E48DF6C11A823BA00082B8B8 /* 768-female-toolbar-selected@3x.png */,
+				E48DF6C21A823BA00082B8B8 /* 769-male-toolbar-selected.png */,
+				E48DF6C31A823BA00082B8B8 /* 769-male-toolbar-selected@2x.png */,
+				E48DF6C41A823BA00082B8B8 /* 769-male-toolbar-selected@3x.png */,
+				E48DF6CB1A828B8B0082B8B8 /* 730-envelope-toolbar-selected.png */,
+				E48DF6CC1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@2x.png */,
+				E48DF6CD1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@3x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -373,12 +416,33 @@
 		E4891C291A73B926006598E3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E4BD0B591A692CE60034A8D0 /* JSONReader.swift */,
+				E48DF6B41A7E921A0082B8B8 /* ABInfiniteScrollView.swift */,
 				E4BD0B611A692CE60034A8D0 /* Tools.swift */,
 				E4763F771A692ED300534B32 /* AutoLayoutHelper.swift */,
 				E4763F751A692EBA00534B32 /* AFDateExtention.swift */,
 				E4891C2A1A73B956006598E3 /* NSDateISO8601.swift */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		E48DF6BA1A80D5EF0082B8B8 /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				E49A5EE21A7A95C2009A10BD /* CalenderViewController.swift */,
+				E48DF6B81A7FE38A0082B8B8 /* CalenderWeekWebViewController.swift */,
+				E48DF6BB1A80D9F60082B8B8 /* CalenderScrollView.swift */,
+				E48DF6BD1A80EB9C0082B8B8 /* StudentCourseLinksWebViewController.swift */,
+			);
+			name = Calender;
+			sourceTree = "<group>";
+		};
+		E49A5EDF1A781C93009A10BD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E49A5EDD1A781C09009A10BD /* LoginTutorViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		E4BD0B261A692C730034A8D0 = {
@@ -420,6 +484,7 @@
 		E4BD0B321A692C740034A8D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E49A5EE01A7824B7009A10BD /* LMdata.plist */,
 				E4763F7E1A6931C300534B32 /* Images */,
 				E4BD0B331A692C740034A8D0 /* Info.plist */,
 			);
@@ -448,7 +513,6 @@
 			children = (
 				E4BD0B571A692CE60034A8D0 /* Client.swift */,
 				E4BD0B581A692CE60034A8D0 /* Course.swift */,
-				E4BD0B591A692CE60034A8D0 /* JSONReader.swift */,
 				E4BD0B5A1A692CE60034A8D0 /* Lesson.swift */,
 				E4BD0B5B1A692CE60034A8D0 /* LMColor.swift */,
 				E4BD0B5C1A692CE60034A8D0 /* Person.swift */,
@@ -562,6 +626,7 @@
 				E4763FD91A6931D800534B32 /* 851-calendar.png in Resources */,
 				E4763FDE1A6931D800534B32 /* 1099-list-1-selected@3x.png in Resources */,
 				E4763FBE1A6931D800534B32 /* 742-wrench-selected.png in Resources */,
+				E48DF6CE1A828B8B0082B8B8 /* 730-envelope-toolbar-selected.png in Resources */,
 				E4763FCF1A6931D800534B32 /* 765-arrow-left-toolbar@3x.png in Resources */,
 				E4763FC81A6931D800534B32 /* 763-arrow-up-toolbar@2x.png in Resources */,
 				E4763FDD1A6931D800534B32 /* 1099-list-1-selected@2x.png in Resources */,
@@ -569,6 +634,8 @@
 				E4763FBD1A6931D800534B32 /* 735-phone-toolbar-selected@3x.png in Resources */,
 				E4763FCB1A6931D800534B32 /* 764-arrow-down-toolbar@2x.png in Resources */,
 				E4763F721A692E7600534B32 /* AgendaStudentCollectionViewCellXib.xib in Resources */,
+				E48DF6D01A828B8B0082B8B8 /* 730-envelope-toolbar-selected@3x.png in Resources */,
+				E48DF6C51A823BA00082B8B8 /* 768-female-toolbar-selected.png in Resources */,
 				E4763FB11A6931D800534B32 /* 728-clock-selected@3x.png in Resources */,
 				E4763FC61A6931D800534B32 /* 742-wrench@3x.png in Resources */,
 				E4BD0B3C1A692C740034A8D0 /* Main.storyboard in Resources */,
@@ -578,7 +645,7 @@
 				E4763FB81A6931D800534B32 /* 735-phone-selected.png in Resources */,
 				E4763FC41A6931D800534B32 /* 742-wrench.png in Resources */,
 				E4763FC21A6931D800534B32 /* 742-wrench-toolbar-selected@2x.png in Resources */,
-				E4763F591A692D2200534B32 /* CalenderMonthCellCollectionViewCellXib.xib in Resources */,
+				E48DF6C91A823BA00082B8B8 /* 769-male-toolbar-selected@2x.png in Resources */,
 				E4763FCD1A6931D800534B32 /* 765-arrow-left-toolbar.png in Resources */,
 				E4763FC51A6931D800534B32 /* 742-wrench@2x.png in Resources */,
 				E4BD0B411A692C740034A8D0 /* LaunchScreen.xib in Resources */,
@@ -588,16 +655,22 @@
 				E4763FBC1A6931D800534B32 /* 735-phone-toolbar-selected@2x.png in Resources */,
 				E4763FB91A6931D800534B32 /* 735-phone-selected@2x.png in Resources */,
 				E4763FC31A6931D800534B32 /* 742-wrench-toolbar-selected@3x.png in Resources */,
+				E48DF6CF1A828B8B0082B8B8 /* 730-envelope-toolbar-selected@2x.png in Resources */,
+				E48DF6C81A823BA00082B8B8 /* 769-male-toolbar-selected.png in Resources */,
 				E4763FDB1A6931D800534B32 /* 851-calendar@3x.png in Resources */,
 				E4763FB71A6931D800534B32 /* 728-clock@3x.png in Resources */,
+				E49A5EE11A7824B7009A10BD /* LMdata.plist in Resources */,
 				E4763FCC1A6931D800534B32 /* 764-arrow-down-toolbar@3x.png in Resources */,
 				E4763FDA1A6931D800534B32 /* 851-calendar@2x.png in Resources */,
 				E4763FC01A6931D800534B32 /* 742-wrench-selected@3x.png in Resources */,
+				E48DF6CA1A823BA00082B8B8 /* 769-male-toolbar-selected@3x.png in Resources */,
 				E4763FCA1A6931D800534B32 /* 764-arrow-down-toolbar.png in Resources */,
+				E48DF6C71A823BA00082B8B8 /* 768-female-toolbar-selected@3x.png in Resources */,
 				E4763FB21A6931D800534B32 /* 728-clock-toolbar-selected.png in Resources */,
 				E4763FD41A6931D800534B32 /* 839-mobile-phone-toolbar-selected@2x.png in Resources */,
 				E4763FBF1A6931D800534B32 /* 742-wrench-selected@2x.png in Resources */,
 				E4763FB31A6931D800534B32 /* 728-clock-toolbar-selected@2x.png in Resources */,
+				E48DF6C61A823BA00082B8B8 /* 768-female-toolbar-selected@2x.png in Resources */,
 				E4763FCE1A6931D800534B32 /* 765-arrow-left-toolbar@2x.png in Resources */,
 				E4763FD81A6931D800534B32 /* 851-calendar-selected@3x.png in Resources */,
 				E4763FB41A6931D800534B32 /* 728-clock-toolbar-selected@3x.png in Resources */,
@@ -640,9 +713,11 @@
 				E4BD0B641A692CE60034A8D0 /* Course.swift in Sources */,
 				E4BD0B691A692CE60034A8D0 /* Response.swift in Sources */,
 				E4763FE01A6D396200534B32 /* ManageMasterTableViewController.swift in Sources */,
+				E48DF6B71A7E92680082B8B8 /* CalenderControl2.swift in Sources */,
 				E476401A1A6D58D600534B32 /* ManageStudentCourseLinksTableViewController.swift in Sources */,
 				E4BD0B631A692CE60034A8D0 /* Client.swift in Sources */,
 				E4763F761A692EBA00534B32 /* AFDateExtention.swift in Sources */,
+				E48DF6B91A7FE38A0082B8B8 /* CalenderWeekWebViewController.swift in Sources */,
 				E4BD0B651A692CE60034A8D0 /* JSONReader.swift in Sources */,
 				E4763F6B1A692DB500534B32 /* TextLabelTableViewCell.swift in Sources */,
 				E4BD0B6B1A692CE60034A8D0 /* Student.swift in Sources */,
@@ -657,10 +732,13 @@
 				E4763F5C1A692D3600534B32 /* AgendaMaster2TableViewController.swift in Sources */,
 				E4891C2B1A73B956006598E3 /* NSDateISO8601.swift in Sources */,
 				E49A5ED81A76687B009A10BD /* SaveTermTableViewController.swift in Sources */,
+				E48DF6BE1A80EB9C0082B8B8 /* StudentCourseLinksWebViewController.swift in Sources */,
 				E4763F6A1A692DB500534B32 /* MarginedTableViewCell.swift in Sources */,
+				E49A5EDE1A781C09009A10BD /* LoginTutorViewController.swift in Sources */,
 				E4763F681A692DB500534B32 /* CardTableViewCell.swift in Sources */,
 				E4BD0B6D1A692CE60034A8D0 /* Tools.swift in Sources */,
 				E49A5ED61A76683D009A10BD /* ManageTermsTableViewController.swift in Sources */,
+				E48DF6BC1A80D9F60082B8B8 /* CalenderScrollView.swift in Sources */,
 				E476401E1A6D8ADD00534B32 /* SaveStudentCourseLinkViewController.swift in Sources */,
 				E4763F671A692DB500534B32 /* AgendaItemTableViewCell.swift in Sources */,
 				E4BD0B661A692CE60034A8D0 /* Lesson.swift in Sources */,
@@ -668,12 +746,14 @@
 				E4763F601A692D8B00534B32 /* AgendaDetailCollectionViewController.swift in Sources */,
 				E4763F5A1A692D2200534B32 /* CalenderMonthCollectionViewCell.swift in Sources */,
 				E4763F691A692DB500534B32 /* EditingTextFieldTableViewCell.swift in Sources */,
+				E48DF6B51A7E921A0082B8B8 /* ABInfiniteScrollView.swift in Sources */,
 				E49A5ED41A7657C1009A10BD /* EditingTableViewController.swift in Sources */,
 				E4763F7D1A692F0800534B32 /* SaveStudentTableViewController.swift in Sources */,
 				E47640181A6D554D00534B32 /* SaveTutorTableViewController.swift in Sources */,
 				E4763F581A692D2200534B32 /* CalenderControl.swift in Sources */,
 				E4F7C4901A700BC600A3032B /* TimeSpan.swift in Sources */,
 				E47640171A6D554D00534B32 /* SaveCourseTableViewController.swift in Sources */,
+				E49A5EE31A7A95C2009A10BD /* CalenderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
