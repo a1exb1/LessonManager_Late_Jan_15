@@ -34,7 +34,7 @@ class TimeSpan: NSObject {
         self.Weekday = DayOfWeek(rawValue: pickerWeekday+1)!
         self.Hour = pickerHour + 1
         self.Minute = (pickerMinute) * 5
-        self.Duration = (pickerDuration + 1) * 15
+        self.Duration = (pickerDuration + 1) * 5
     }
     
     func PickerValues() -> Dictionary<String, Int>{
@@ -42,7 +42,7 @@ class TimeSpan: NSObject {
         rc["pickerWeekday"] = self.Weekday.rawValue - 1
         rc["pickerHour"] = self.Hour - 1
         rc["pickerMinute"] = self.Minute / 5
-        rc["pickerDuration"] = (self.Duration / 15) - 1
+        rc["pickerDuration"] = (self.Duration / 5) - 1
         return rc
     }
     

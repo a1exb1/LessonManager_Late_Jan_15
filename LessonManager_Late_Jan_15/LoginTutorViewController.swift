@@ -26,7 +26,8 @@ class LoginTutorTableViewController : EditingTableViewController{
         if Tools.HasValue(username) && Tools.HasValue(password){
             tutor.UserName = username!
             tutor.Password = password!
-            login(username!, password: password!)
+            //login(username!, password: password!)
+            
         }
     }
 
@@ -64,6 +65,10 @@ class LoginTutorTableViewController : EditingTableViewController{
     
     func login(username:String, password:String){
         tutor.Login(username, password: password){ response in
+            
+            Tools.SetValueInPlist("LMdata", key: "login_tutor_username", value: username)
+            Tools.SetValueInPlist("LMdata", key: "login_tutor_password", value: password)
+            
             self.dismissViewControllerAnimated(true, completion: nil)
             self.loginDelegate?.didLogin()
         }

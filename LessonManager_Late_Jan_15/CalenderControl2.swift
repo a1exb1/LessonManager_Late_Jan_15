@@ -15,7 +15,7 @@ import UIKit
     optional func calenderControlDidChangeMode()
 }
 
-class CalenderControl2: ABInfiniteScrollView, UICollectionViewDelegate, UICollectionViewDataSource {
+class CalenderControl2: ABInfiniteScrollView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     var date = NSDate()
     var selectedDate = NSDate()
@@ -37,6 +37,7 @@ class CalenderControl2: ABInfiniteScrollView, UICollectionViewDelegate, UICollec
         self.originView.addSubview(self)
         self.backgroundColor = LMColor.purpleColor()
         self.navigationItem?.title = Tools.StringFromDate(date, format: "MMMM, yyyy")
+        self.delegate = self
     }
     
     override func infiniteScrollViewDidScroll(direction: ABInfiniteScrollDirection) {
@@ -47,6 +48,8 @@ class CalenderControl2: ABInfiniteScrollView, UICollectionViewDelegate, UICollec
         date = direction == .Left ? date.dateBySubtractingMonths(1) : date.dateByAddingMonths(1)
         firstDateOfMonth = Tools.GetFirstDateOfMonthFromDate(date).dateAtStartOfWeek()
         navigationItem?.title = Tools.StringFromDate(date, format: "MMMM, yyyy")
+        
+        
     }
     
     override func infiniteScrollViewNewView(frame:CGRect, pageFrame:CGRect) -> UIView {
@@ -89,6 +92,7 @@ class CalenderControl2: ABInfiniteScrollView, UICollectionViewDelegate, UICollec
         //self.monthContainer.addSubview(collectionView)
         //collectionView.reloadData()
         collectionView.backgroundColor = UIColor.clearColor()
+        self.monthView = collectionView
         return collectionView
     }
     
@@ -147,9 +151,7 @@ class CalenderControl2: ABInfiniteScrollView, UICollectionViewDelegate, UICollec
                 cell.addCellIndicator()
             }
         }
-        
-        
-        
+
         return cell
     }
     
@@ -205,18 +207,26 @@ class CalenderControl2: ABInfiniteScrollView, UICollectionViewDelegate, UICollec
         //reloadActiveCollectionViewData()
     }
     
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        calenderControlDelegate?.calenderControlDidChangeMonth?(firstDateOfMonth) // ?
+    }
     
     func reloadActiveCollectionViewData(){
         if monthView != nil{
-            var superview:UIView = monthView!.superview!
-            monthView!.removeFromSuperview()
-            monthView = createCollectionView(CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height))
-            superview.addSubview(monthView!)
+//            var superview:UIView = monthView!.superview!
+//            monthView!.removeFromSuperview()
+//            monthView = createCollectionView(CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height))
+//            superview.addSubview(monthView!)
+            monthView?.reloadData()
         }
     }
     
-    func onDidRotate(){
-        self.frame = self.isMonthMode ? CGRect(x: 0, y: 0, width: originView.bounds.width, height: 275) : CGRect(x: 0, y: 0, width: self.originView.bounds.width, height: 60);
+    override func onDidRotate(bounds: CGRect) {
+        var height:CGFloat = bounds.height > 375 ? 275 : 175
+        var b = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.width, height: height)
+        super.onDidRotate(b)
+        
+        //self.frame = self.isMonthMode ? CGRect(x: 0, y: 0, width: originView.bounds.width, height: 275) : CGRect(x: 0, y: 0, width: self.originView.bounds.width, height: 60);
         //self.monthContainer.frame = self.isMonthMode ? CGRect(x: 0, y: 0, width: originView.bounds.width, height: 275) : CGRect(x: 0, y: 0, width: self.originView.bounds.width, height: 60);
         self.reloadActiveCollectionViewData()
     }

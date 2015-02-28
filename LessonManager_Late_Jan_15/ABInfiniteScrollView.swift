@@ -52,6 +52,20 @@ class ABInfiniteScrollView: UIScrollView, ABInfiniteScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //func onDid
+    
+    func onDidRotate(bounds:CGRect){
+        self.contentSize = CGSizeMake(bounds.width * 5, bounds.size.height);
+        self.contentOffset = CGPointMake(bounds.width * CGFloat(self.currentViewPositionIndex + 1), 0);
+        self.frame = bounds
+        var startPosition:CGFloat = 0
+        for (var i:CGFloat = 0; i < 5; i++){
+            var plus:CGFloat = bounds.width * i
+            self.views[Int(i)].frame = CGRect(x: startPosition + plus, y: 0, width: bounds.width, height: bounds.height)
+        }
+        replaceView()
+    }
+    
     // recenter content periodically to achieve impression of infinite scrolling
     func recenterIfNecessary()
     {
@@ -78,7 +92,7 @@ class ABInfiniteScrollView: UIScrollView, ABInfiniteScrollViewDelegate {
             for v in self.views[1].subviews{
                 self.views[4].addSubview(v as UIView)
             }
-            
+            //self.views[4].backgroundColor = self.views[1].backgroundColor!()
         }
         else if distanceFromCenter > self.bounds.width * 2 && self.contentOffset.x > (self.contentSize.width / 2){
             self.contentOffset = CGPointMake(self.bounds.width * 1, currentOffset.y);
@@ -88,6 +102,7 @@ class ABInfiniteScrollView: UIScrollView, ABInfiniteScrollViewDelegate {
             for v in self.views[4].subviews{
                 self.views[1].addSubview(v as UIView)
             }
+            //self.views[1].backgroundColor = self.views[4].backgroundColor
         }
         
         previousContentOffset = self.contentOffset
@@ -108,9 +123,7 @@ class ABInfiniteScrollView: UIScrollView, ABInfiniteScrollViewDelegate {
             }
             replaceView()
             setup = true
-            
         }
-        
     }
     
     func replaceView(){
@@ -123,6 +136,7 @@ class ABInfiniteScrollView: UIScrollView, ABInfiniteScrollViewDelegate {
         self.addSubview(v)
     }
     
+    //will be overrided
     func infiniteScrollViewNewView(frame:CGRect, pageFrame:CGRect) -> UIView {
         var rc = UIView(frame: frame)
         rc.backgroundColor = UIColor.blackColor()

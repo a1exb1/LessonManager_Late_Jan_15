@@ -41,7 +41,11 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(tableView)
+        tableView.addRightConstraint(toView: tableView.superview, relation: NSLayoutRelation.Equal, constant: 0)
+        tableView.addBottomConstraint(toView: tableView.superview, relation: NSLayoutRelation.Equal, constant: 0)
+        tableView.addLeftConstraint(toView: tableView.superview, relation: NSLayoutRelation.Equal, constant: 0)
         
         self.navigationController!.tabBarItem!.selectedImage = UIImage(named: "728-clock-selected.png")
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -72,10 +76,7 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
         
         toolbar.setItems([flex, manageBtn], animated: true)
         toolbar.sizeToFit()
-        
         session.agendaMasterDelegate = self
-        
-        
     }
     
     func calenderMode(control:UISegmentedControl){
@@ -109,7 +110,8 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
         if calenderView == nil{
             calenderView = CalenderControl2(origin: self.view, navigationItem:navigationItem)
             calenderView?.calenderControlDelegate = self
-            //calenderView?.setIsMonthMode(true)
+            tableView.addTopConstraint(toView: calenderView, attribute: NSLayoutAttribute.Bottom, relation: NSLayoutRelation.Equal, constant: 0)
+            tableView.setNeedsUpdateConstraints()
         }
         
         getMonthData()
@@ -126,7 +128,6 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
         layoutViews()
         
         if session.tutor.PersonID == 0{
@@ -147,12 +148,12 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     }
     
     func layoutViews(){
-        tableView.frame = CGRect(x: 0, y: calenderView!.frame.height, width: self.view.frame.width, height: self.view.frame.height - calenderView!.frame.height - toolbar.frame.height)
+        //tableView.frame = CGRect(x: 0, y: calenderView!.frame.height, width: self.view.frame.width, height: self.view.frame.height - calenderView!.frame.height - toolbar.frame.height)
         var indexPath = self.tableView.indexPathForSelectedRow()
         if indexPath != nil{
             self.tableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
-        calenderView?.onDidRotate()
+        calenderView?.onDidRotate(self.view.bounds)
     }
     
     func goToSettings(){
@@ -192,7 +193,6 @@ class AgendaMaster2TableViewController: UIViewController, UITableViewDelegate, U
     func getData(){
         self.lessons = []
         self.tableView.reloadData()
-        Tools.AddLoaderToView(self.tableView)
         Tools.AddLoaderToView(self.tableView)
         session.tutor.GetLessons(calenderView!.selectedDate){ lessons in
             self.lessons = lessons

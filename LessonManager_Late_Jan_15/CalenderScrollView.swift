@@ -36,19 +36,19 @@ class CalenderScrollView: ABInfiniteScrollView, UIWebViewDelegate {
     
     override func infiniteScrollViewNewView(frame: CGRect, pageFrame:CGRect) -> UIView {
         var view = UIView(frame:frame)
-        
+        //view.backgroundColor = UIColor.randomColor()
         var subView = UIView(frame: pageFrame)
         var webView = UIWebView(frame: pageFrame)
         
         let requestURL = NSURL(string: URL())
         let request = NSURLRequest(URL: requestURL!)
+        self.activeWebView = webView
         webView.loadRequest(request)
         webView.delegate = self
         
         subView.addSubview(webView)
         view.addSubview(subView)
         
-        self.activeWebView = webView
         calenderScrollViewDelegate?.calenderScrollViewDidChangeDate(selectedDate)
         return view
     }
@@ -60,17 +60,17 @@ class CalenderScrollView: ABInfiniteScrollView, UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        if webView == self.activeWebView{
-            Tools.AddLoaderToView(webView.superview!)
-            webView.hidden = true
-        }
+        //if webView == self.activeWebView{
+            //Tools.AddLoaderToView(webView.superview!)
+            //webView.hidden = true
+        //}
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        if webView == self.activeWebView{
-            Tools.HideLoaderFromView(webView.superview!)
-            webView.hidden = false
-        }
+        //if webView == self.activeWebView{
+            //Tools.HideLoaderFromView(webView.superview!)
+            //webView.hidden = false
+        //}
     }
     
 }

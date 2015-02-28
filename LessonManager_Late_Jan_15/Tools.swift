@@ -321,6 +321,17 @@ class Tools: NSObject {
         return dict?.objectForKey(value)? as String?
     }
     
+    class func SetValueInPlist(plist:String, key:String, value:String) -> Bool{
+        var rc = false
+        
+        var path = NSBundle.mainBundle().pathForResource(plist, ofType: "plist")
+        if var dict = NSMutableDictionary(contentsOfFile: path!) {
+            dict.setValue(value, forKey: key)
+            dict.writeToFile(path!, atomically: false)
+        }
+        return rc
+    }
+    
     class func HasValue(obj:AnyObject?) -> Bool{
         var rc = false
         if obj != nil{

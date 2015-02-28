@@ -137,12 +137,10 @@ class ManageStudentCourseLinksTableViewController: UITableViewController {
             slot.Delete(self.view){ response in
                 println("") // this line needed ?!
                 //self.getData()
-                
                 self.tableView.beginUpdates()
                 self.slots[self.weekDaysWithSlots[indexPath.section]]!.removeAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)], withRowAnimation: UITableViewRowAnimation.Top)
                 self.tableView.endUpdates()
-
             }
         }
     }
